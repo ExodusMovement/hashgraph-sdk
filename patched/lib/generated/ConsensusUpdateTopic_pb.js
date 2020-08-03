@@ -8,11 +8,11 @@
  */
 // GENERATED CODE -- DO NOT EDIT!
 
-var jspb = require('google-protobuf');
+var jspb = require('../google-protobuf.patched/google-protobuf');
 var goog = jspb;
 
 
-var google_protobuf_wrappers_pb = require('google-protobuf/google/protobuf/wrappers_pb.js');
+var google_protobuf_wrappers_pb = require('../google-protobuf.patched/wrappers_pb');
 goog.object.extend(proto, google_protobuf_wrappers_pb);
 var BasicTypes_pb = require('./BasicTypes_pb.js');
 goog.object.extend(proto, BasicTypes_pb);

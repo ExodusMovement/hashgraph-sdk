@@ -8,7 +8,7 @@
  */
 // GENERATED CODE -- DO NOT EDIT!
 
-var jspb = require('google-protobuf');
+var jspb = require('../google-protobuf.patched/google-protobuf');
 var goog = jspb;
 
 

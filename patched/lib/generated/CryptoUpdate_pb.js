@@ -8,7 +8,7 @@
  */
 // GENERATED CODE -- DO NOT EDIT!
 
-var jspb = require('google-protobuf');
+var jspb = require('../google-protobuf.patched/google-protobuf');
 var goog = jspb;
 
 
@@ -18,7 +18,7 @@ var Duration_pb = require('./Duration_pb.js');
 goog.object.extend(proto, Duration_pb);
 var Timestamp_pb = require('./Timestamp_pb.js');
 goog.object.extend(proto, Timestamp_pb);
-var google_protobuf_wrappers_pb = require('google-protobuf/google/protobuf/wrappers_pb.js');
+var google_protobuf_wrappers_pb = require('../google-protobuf.patched/wrappers_pb');
 goog.object.extend(proto, google_protobuf_wrappers_pb);
 goog.exportSymbol('proto.proto.CryptoUpdateTransactionBody', null, global);
 goog.exportSymbol('proto.proto.CryptoUpdateTransactionBody.ReceiverecordthresholdfieldCase', null, global);

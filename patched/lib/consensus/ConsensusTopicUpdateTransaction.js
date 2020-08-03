@@ -7,7 +7,7 @@ const ConsensusService_pb_service_1 = require("../generated/ConsensusService_pb_
 const util_1 = require("../util");
 const AccountId_1 = require("../account/AccountId");
 const ConsensusTopicId_1 = require("./ConsensusTopicId");
-const wrappers_pb_1 = require("google-protobuf/google/protobuf/wrappers_pb");
+const wrappers_pb_1 = require('../google-protobuf.patched/wrappers_pb');
 class ConsensusTopicUpdateTransaction extends TransactionBuilder_1.SingleTransactionBuilder {
     constructor() {
         super();
