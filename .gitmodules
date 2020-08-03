@@ -1,0 +1,3 @@
+[submodule "hedera-sdk-js"]
+	path = hedera-sdk-js
+	url = https://github.com/hashgraph/hedera-sdk-js
