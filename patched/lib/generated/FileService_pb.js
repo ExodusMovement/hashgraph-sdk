@@ -10,7 +10,7 @@
 
 var jspb = require('google-protobuf');
 var goog = jspb;
-var global = Function('return this')();
+
 
 var Query_pb = require('./Query_pb.js');
 goog.object.extend(proto, Query_pb);

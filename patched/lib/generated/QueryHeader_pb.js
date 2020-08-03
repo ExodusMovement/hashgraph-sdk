@@ -10,7 +10,7 @@
 
 var jspb = require('google-protobuf');
 var goog = jspb;
-var global = Function('return this')();
+
 
 var Transaction_pb = require('./Transaction_pb.js');
 goog.object.extend(proto, Transaction_pb);

@@ -10,7 +10,7 @@
 
 var jspb = require('google-protobuf');
 var goog = jspb;
-var global = Function('return this')();
+
 
 goog.exportSymbol('proto.proto.ResponseCodeEnum', null, global);
 /**

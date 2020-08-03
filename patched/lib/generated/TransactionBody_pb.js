@@ -10,7 +10,7 @@
 
 var jspb = require('google-protobuf');
 var goog = jspb;
-var global = Function('return this')();
+
 
 var SystemDelete_pb = require('./SystemDelete_pb.js');
 goog.object.extend(proto, SystemDelete_pb);
