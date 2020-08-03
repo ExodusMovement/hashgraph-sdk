@@ -8,9 +8,8 @@
  */
 // GENERATED CODE -- DO NOT EDIT!
 
-var jspb = require('google-protobuf');
+var jspb = require('./google-protobuf');
 var goog = jspb;
-var global = Function('return this')();
 
 goog.exportSymbol('proto.google.protobuf.BoolValue', null, global);
 goog.exportSymbol('proto.google.protobuf.BytesValue', null, global);
