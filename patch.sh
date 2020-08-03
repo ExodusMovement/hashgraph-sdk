@@ -27,3 +27,5 @@ if grep -qrE '(^|[^a-zA-Z."])global([^a-zA-Z]|$)' patched; then
   echo "Error: global still present"
   exit -1
 fi
+
+cp package.patched.json patched/package.json
