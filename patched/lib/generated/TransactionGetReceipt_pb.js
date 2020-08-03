@@ -10,7 +10,7 @@
 
 var jspb = require('../google-protobuf.patched/google-protobuf');
 var goog = jspb;
-
+const global = jspb.globalScope; const { proto } = jspb.globalScope
 
 var TransactionReceipt_pb = require('./TransactionReceipt_pb.js');
 goog.object.extend(proto, TransactionReceipt_pb);

@@ -10,7 +10,7 @@
 
 var jspb = require('../google-protobuf.patched/google-protobuf');
 var goog = jspb;
-
+const global = jspb.globalScope; const { proto } = jspb.globalScope
 
 var google_protobuf_wrappers_pb = require('../google-protobuf.patched/wrappers_pb');
 goog.object.extend(proto, google_protobuf_wrappers_pb);

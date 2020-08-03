@@ -10,7 +10,7 @@
 
 var jspb = require('../google-protobuf.patched/google-protobuf');
 var goog = jspb;
-
+const global = jspb.globalScope; const { proto } = jspb.globalScope
 
 var Duration_pb = require('./Duration_pb.js');
 goog.object.extend(proto, Duration_pb);

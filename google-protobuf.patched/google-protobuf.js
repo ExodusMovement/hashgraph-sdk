@@ -1,3 +1,5 @@
+const globalScope = { proto: {} }
+
 var $jscomp = $jscomp || {};
 $jscomp.scope = {};
 $jscomp.findInternal = function (a, b, c) {
@@ -18,14 +20,7 @@ $jscomp.defineProperty =
     : function (a, b, c) {
         a != Array.prototype && a != Object.prototype && (a[b] = c.value);
       };
-$jscomp.getGlobal = function (a) {
-  return "undefined" != typeof window && window === a
-    ? a
-    : "undefined" != typeof global && null != global
-    ? global
-    : a;
-};
-$jscomp.global = $jscomp.getGlobal(this);
+$jscomp.global = globalScope;
 $jscomp.polyfill = function (a, b, c, d) {
   if (b) {
     c = $jscomp.global;
@@ -8935,3 +8930,5 @@ exports.exportSymbol = goog.exportSymbol;
 exports.inherits = goog.inherits;
 exports.object = { extend: goog.object.extend };
 exports.typeOf = goog.typeOf;
+
+exports.globalScope = globalScope

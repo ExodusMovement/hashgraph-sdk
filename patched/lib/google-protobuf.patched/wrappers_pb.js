@@ -10,6 +10,7 @@
 
 var jspb = require('./google-protobuf');
 var goog = jspb;
+const global = jspb.globalScope; const { proto } = jspb.globalScope
 
 goog.exportSymbol('proto.google.protobuf.BoolValue', null, global);
 goog.exportSymbol('proto.google.protobuf.BytesValue', null, global);

@@ -10,7 +10,7 @@
 
 var jspb = require('../google-protobuf.patched/google-protobuf');
 var goog = jspb;
-
+const global = jspb.globalScope; const { proto } = jspb.globalScope
 
 var ResponseCode_pb = require('./ResponseCode_pb.js');
 goog.object.extend(proto, ResponseCode_pb);
