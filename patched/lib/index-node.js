@@ -23,7 +23,7 @@ exports.Client = void 0;
 const BaseClient_1 = require("./BaseClient");
 const fs = require("fs");
 const util = require("util");
-const grpc = require("@grpc/grpc-js");
+const grpc = require("@exodus/grpc-js");
 const exports_1 = require("./exports");
 __exportStar(require("./exports"), exports);
 const readFile = util.promisify(fs.readFile);

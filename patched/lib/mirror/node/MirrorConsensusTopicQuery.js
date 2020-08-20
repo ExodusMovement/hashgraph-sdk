@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.MirrorConsensusTopicQuery = void 0;
-const grpc = require("@grpc/grpc-js");
+const grpc = require("@exodus/grpc-js");
 const MirrorConsensusService_pb_1 = require("../../generated/MirrorConsensusService_pb");
 const MirrorConsensusService_pb_service_1 = require("../../generated/MirrorConsensusService_pb_service");
 const TransactionId_1 = require("../../TransactionId");

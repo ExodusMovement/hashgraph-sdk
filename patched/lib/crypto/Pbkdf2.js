@@ -11,10 +11,6 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Pbkdf2 = exports.pbkdf2 = void 0;
 const Hmac_1 = require("./Hmac");
-const sha256_1 = require("@stablelib/sha256");
-const sha384_1 = require("@stablelib/sha384");
-const sha512_1 = require("@stablelib/sha512");
-const pbkdf2_1 = require("@stablelib/pbkdf2");
 const utf8 = require("@stablelib/utf8");
 const crypto = require("crypto");
 const util_1 = require("util");
@@ -44,15 +40,7 @@ class Pbkdf2 {
                     }, key, length << 3));
                 }
                 catch (_a) {
-                    switch (algorithm) {
-                        case Hmac_1.HashAlgorithm.Sha256:
-                            return pbkdf2_1.deriveKey(sha256_1.SHA256, pass, nacl, iterations, length);
-                        case Hmac_1.HashAlgorithm.Sha384:
-                            return pbkdf2_1.deriveKey(sha384_1.SHA384, pass, nacl, iterations, length);
-                        case Hmac_1.HashAlgorithm.Sha512:
-                            return pbkdf2_1.deriveKey(sha512_1.SHA512, pass, nacl, iterations, length);
-                        default: throw new Error("(BUG) Non-Exhaustive switch statement for algorithms");
-                    }
+                    // will fall through to crypto, which can be polyfilled using crypto-browserify
                 }
             }
             switch (algorithm) {

@@ -23,9 +23,14 @@ const FreezeService_pb_service_1 = require("./generated/FreezeService_pb_service
 const AccountId_1 = require("./account/AccountId");
 const TransactionId_1 = require("./TransactionId");
 const Status_1 = require("./Status");
-const base64 = require("@stablelib/base64");
-const sha384_1 = require("@stablelib/sha384");
+const base64 = require("./encoding/base64");
+const crypto_1 = require("crypto");
 const HederaPrecheckStatusError_1 = require("./errors/HederaPrecheckStatusError");
+function sha384Hash(data) {
+    const hash = crypto_1.createHash('sha384');
+    hash.update(data);
+    return hash.digest();
+}
 const receiptRetryDelayMs = 500;
 /** internal method to create a new transaction from its discrete parts */
 exports.transactionCreate = Symbol("transactionCreate");
@@ -113,7 +118,7 @@ class Transaction {
         if (((_b = (_a = this._inner.getSigmap()) === null || _a === void 0 ? void 0 : _a.getSigpairList().length) !== null && _b !== void 0 ? _b : 0) === 0) {
             throw new Error("transaction must be signed");
         }
-        return sha384_1.hash(this.toBytes());
+        return sha384Hash(this.toBytes());
     }
     [exports.transactionCall](client) {
         return __awaiter(this, void 0, void 0, function* () {

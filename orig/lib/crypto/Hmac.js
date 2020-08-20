@@ -12,10 +12,6 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.Hmac = exports.HashAlgorithm = void 0;
 const crypto = require("crypto");
 const utf8 = require("@stablelib/utf8");
-const hmac_1 = require("@stablelib/hmac");
-const sha512_1 = require("@stablelib/sha512");
-const sha384_1 = require("@stablelib/sha384");
-const sha256_1 = require("@stablelib/sha256");
 var HashAlgorithm;
 (function (HashAlgorithm) {
     HashAlgorithm["Sha256"] = "SHA-256";
@@ -28,7 +24,7 @@ class Hmac {
             const key = typeof secretKey === "string" ? utf8.encode(secretKey) : secretKey;
             const value = typeof data === "string" ? utf8.encode(data) : data;
             if (typeof window !== "undefined") {
-                // Try SubtleCrypto if it exists, otherwise fallback to @stablelibs/Hmac
+                // Try SubtleCrypto if it exists, otherwise fallback to crypto-browserify
                 try {
                     const key_ = yield window.crypto.subtle.importKey("raw", key, {
                         name: "HMAC",
@@ -37,15 +33,7 @@ class Hmac {
                     return new Uint8Array(yield window.crypto.subtle.sign("HMAC", key_, value));
                 }
                 catch (_a) {
-                    switch (algorithm) {
-                        case HashAlgorithm.Sha256:
-                            return hmac_1.hmac(sha256_1.SHA256, key, value);
-                        case HashAlgorithm.Sha384:
-                            return hmac_1.hmac(sha384_1.SHA384, key, value);
-                        case HashAlgorithm.Sha512:
-                            return hmac_1.hmac(sha512_1.SHA512, key, value);
-                        default: throw new Error("(BUG) Non-Exhaustive switch statement for algorithms");
-                    }
+                    // will fall through to crypto, which can be polyfilled using crypto-browserify
                 }
             }
             switch (algorithm) {

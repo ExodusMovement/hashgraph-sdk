@@ -18,7 +18,6 @@ const BadKeyError_1 = require("../errors/BadKeyError");
 const BadPemFileError_1 = require("../errors/BadPemFileError");
 const pkcs_1 = require("./pkcs");
 const der_1 = require("./der");
-// import * as base64 from "@stablelib/base64";
 const base64 = require("../encoding/base64");
 const hex = require("@stablelib/hex");
 const Hmac_1 = require("./Hmac");
@@ -245,8 +244,6 @@ class Ed25519PrivateKey {
                 throw new BadPemFileError_1.BadPemFileError();
             }
             const keyEncoded = pem.slice(beginIndex + beginTag.length, endIndex);
-            // Base64 library throws a "Base64Coder: incorrect characters for decoding"
-            // const key = base64.decode(keyEncoded);
             const key = base64.decode(keyEncoded);
             if (passphrase) {
                 let encrypted;
