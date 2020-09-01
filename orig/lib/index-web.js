@@ -62,8 +62,3 @@ class Client extends BaseClient_1.BaseClient {
     }
 }
 exports.Client = Client;
-// Mirror
-var MirrorClient_1 = require("./mirror/web/MirrorClient");
-Object.defineProperty(exports, "MirrorClient", { enumerable: true, get: function () { return MirrorClient_1.MirrorClient; } });
-var MirrorConsensusTopicQuery_1 = require("./mirror/web/MirrorConsensusTopicQuery");
-Object.defineProperty(exports, "MirrorConsensusTopicQuery", { enumerable: true, get: function () { return MirrorConsensusTopicQuery_1.MirrorConsensusTopicQuery; } });

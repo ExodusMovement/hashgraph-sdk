@@ -18,5 +18,3 @@ export declare class Client extends BaseClient {
     close(): void;
     _unaryCall<Rq extends ProtobufMessage, Rs extends ProtobufMessage>(url: string, request: Rq, method: UnaryMethodDefinition<Rq, Rs>): Promise<Rs>;
 }
-export { MirrorClient } from "./mirror/node/MirrorClient";
-export { MirrorConsensusTopicQuery } from "./mirror/node/MirrorConsensusTopicQuery";

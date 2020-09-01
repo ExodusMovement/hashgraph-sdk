@@ -1,5 +1,4 @@
 import { Ed25519PublicKey } from "./Ed25519PublicKey";
-import { Mnemonic } from "./Mnemonic";
 export declare class Ed25519PrivateKey {
     readonly publicKey: Ed25519PublicKey;
     readonly _keyData: Uint8Array;
@@ -37,7 +36,8 @@ export declare class Ed25519PrivateKey {
      *
      * @link generateMnemonic
      */
-    static fromMnemonic(mnemonic: Mnemonic, passphrase: string): Promise<Ed25519PrivateKey>;
+    static fromMnemonic(mnemonic: any, // accept strings
+    passphrase: string): Promise<Ed25519PrivateKey>;
     /**
      * Recover a private key from a keystore blob previously created by `.createKeystore()`.
      *

@@ -110,7 +110,8 @@ class Ed25519PrivateKey {
      *
      * @link generateMnemonic
      */
-    static fromMnemonic(mnemonic, passphrase) {
+    static fromMnemonic(mnemonic, // accept strings
+    passphrase) {
         return __awaiter(this, void 0, void 0, function* () {
             if (mnemonic._isLegacy) {
                 return mnemonic._legacyToPrivateKey();

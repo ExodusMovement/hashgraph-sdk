@@ -17,5 +17,3 @@ export declare class Client extends BaseClient {
     close(): Promise<void>;
     _unaryCall<Rq extends ProtobufMessage, Rs extends ProtobufMessage>(url: string, request: Rq, method: grpc.UnaryMethodDefinition<Rq, Rs>): Promise<Rs>;
 }
-export { MirrorClient } from "./mirror/web/MirrorClient";
-export { MirrorConsensusTopicQuery } from "./mirror/web/MirrorConsensusTopicQuery";

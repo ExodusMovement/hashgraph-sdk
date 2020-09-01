@@ -17,9 +17,6 @@ const BasicTypes_pb_1 = require("./generated/BasicTypes_pb");
 const util_1 = require("./util");
 const google_protobuf_1 = require('./google-protobuf.patched/google-protobuf');
 const CryptoService_pb_service_1 = require("./generated/CryptoService_pb_service");
-const SmartContractService_pb_service_1 = require("./generated/SmartContractService_pb_service");
-const FileService_pb_service_1 = require("./generated/FileService_pb_service");
-const FreezeService_pb_service_1 = require("./generated/FreezeService_pb_service");
 const AccountId_1 = require("./account/AccountId");
 const TransactionId_1 = require("./TransactionId");
 const Status_1 = require("./Status");
@@ -163,16 +160,6 @@ class Transaction {
             return this.id;
         });
     }
-    /** @deprecate `Transaction.getReceipt()` is deprecrated. Use `(await Transaction.execute()).getReceipt()` instead. */
-    getReceipt(client) {
-        console.warn("`Transaction.getReceipt()` is deprecrated. Use `(await Transaction.execute()).getReceipt()` instead.");
-        return this.id.getReceipt(client);
-    }
-    /** @deprecate `Transaction.getRecord()` is deprecrated. Use `(await Transaction.execute()).getRecord()` instead. */
-    getRecord(client) {
-        console.warn("`Transaction.getRecord()` is deprecrated. Use `(await Transaction.execute()).getRecord()` instead.");
-        return this.id.getRecord(client);
-    }
     _toProto() {
         return google_protobuf_1.Message.cloneMessage(this._inner);
     }
@@ -193,13 +180,10 @@ exports.Transaction = Transaction;
 function methodFromTxn(inner) {
     switch (inner.getDataCase()) {
         case TransactionBody_pb_1.TransactionBody.DataCase.CONTRACTCALL:
-            return SmartContractService_pb_service_1.SmartContractService.contractCallMethod;
         case TransactionBody_pb_1.TransactionBody.DataCase.CONTRACTCREATEINSTANCE:
-            return SmartContractService_pb_service_1.SmartContractService.createContract;
         case TransactionBody_pb_1.TransactionBody.DataCase.CONTRACTUPDATEINSTANCE:
-            return SmartContractService_pb_service_1.SmartContractService.updateContract;
         case TransactionBody_pb_1.TransactionBody.DataCase.CONTRACTDELETEINSTANCE:
-            return SmartContractService_pb_service_1.SmartContractService.deleteContract;
+            throw new Error('This method was removed by code cleanup');
         case TransactionBody_pb_1.TransactionBody.DataCase.CRYPTOCREATEACCOUNT:
             return CryptoService_pb_service_1.CryptoService.createAccount;
         case TransactionBody_pb_1.TransactionBody.DataCase.CRYPTODELETE:
@@ -209,19 +193,12 @@ function methodFromTxn(inner) {
         case TransactionBody_pb_1.TransactionBody.DataCase.CRYPTOUPDATEACCOUNT:
             return CryptoService_pb_service_1.CryptoService.updateAccount;
         case TransactionBody_pb_1.TransactionBody.DataCase.FILEAPPEND:
-            return FileService_pb_service_1.FileService.appendContent;
         case TransactionBody_pb_1.TransactionBody.DataCase.FILECREATE:
-            return FileService_pb_service_1.FileService.createFile;
         case TransactionBody_pb_1.TransactionBody.DataCase.FILEDELETE:
-            return FileService_pb_service_1.FileService.deleteFile;
         case TransactionBody_pb_1.TransactionBody.DataCase.FILEUPDATE:
-            return FileService_pb_service_1.FileService.updateFile;
         case TransactionBody_pb_1.TransactionBody.DataCase.SYSTEMDELETE:
-            return SmartContractService_pb_service_1.SmartContractService.systemDelete;
         case TransactionBody_pb_1.TransactionBody.DataCase.SYSTEMUNDELETE:
-            return SmartContractService_pb_service_1.SmartContractService.systemUndelete;
-        case TransactionBody_pb_1.TransactionBody.DataCase.FREEZE:
-            return FreezeService_pb_service_1.FreezeService.freeze;
+            throw new Error('This method was removed by code cleanup');
         case TransactionBody_pb_1.TransactionBody.DataCase.DATA_NOT_SET:
             throw new Error("transaction body missing");
         default:

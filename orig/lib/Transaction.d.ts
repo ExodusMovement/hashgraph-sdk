@@ -2,10 +2,8 @@ import { Transaction as Transaction_ } from "./generated/Transaction_pb";
 import { BaseClient, TransactionSigner } from "./BaseClient";
 import { TransactionResponse } from "./generated/TransactionResponse_pb";
 import { TransactionId } from "./TransactionId";
-import { TransactionReceipt } from "./TransactionReceipt";
 import { Ed25519PublicKey } from "./crypto/Ed25519PublicKey";
 import { Ed25519PrivateKey } from "./crypto/Ed25519PrivateKey";
-import { TransactionRecord } from "./TransactionRecord";
 /** signature/public key pairs are passed around as objects */
 export interface SignatureAndKey {
     signature: Uint8Array;
@@ -39,10 +37,6 @@ export declare class Transaction {
     hash(): Uint8Array;
     [transactionCall](client: BaseClient): Promise<TransactionResponse>;
     execute(client: BaseClient): Promise<TransactionId>;
-    /** @deprecate `Transaction.getReceipt()` is deprecrated. Use `(await Transaction.execute()).getReceipt()` instead. */
-    getReceipt(client: BaseClient): Promise<TransactionReceipt>;
-    /** @deprecate `Transaction.getRecord()` is deprecrated. Use `(await Transaction.execute()).getRecord()` instead. */
-    getRecord(client: BaseClient): Promise<TransactionRecord>;
     _toProto(): Transaction_;
     toBytes(): Uint8Array;
     toString(): string;

@@ -98,11 +98,6 @@ class Client extends BaseClient_1.BaseClient {
     }
 }
 exports.Client = Client;
-// Mirror
-var MirrorClient_1 = require("./mirror/node/MirrorClient");
-Object.defineProperty(exports, "MirrorClient", { enumerable: true, get: function () { return MirrorClient_1.MirrorClient; } });
-var MirrorConsensusTopicQuery_1 = require("./mirror/node/MirrorConsensusTopicQuery");
-Object.defineProperty(exports, "MirrorConsensusTopicQuery", { enumerable: true, get: function () { return MirrorConsensusTopicQuery_1.MirrorConsensusTopicQuery; } });
 // Override console.log output for some classes (to be toString)
 for (const cls of [
     exports_1.TransactionReceipt,
