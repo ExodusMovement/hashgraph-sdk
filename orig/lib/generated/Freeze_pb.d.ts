@@ -2,8 +2,6 @@
 // file: Freeze.proto
 
 import * as jspb from "google-protobuf";
-import * as Duration_pb from "./Duration_pb";
-import * as Timestamp_pb from "./Timestamp_pb";
 import * as BasicTypes_pb from "./BasicTypes_pb";
 
 export class FreezeTransactionBody extends jspb.Message {

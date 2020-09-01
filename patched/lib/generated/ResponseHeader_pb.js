@@ -12,8 +12,6 @@ var jspb = require('../google-protobuf.patched/google-protobuf');
 var goog = jspb;
 const { proto } = jspb.globalScope
 
-var TransactionResponse_pb = require('./TransactionResponse_pb.js');
-goog.object.extend(proto, TransactionResponse_pb);
 var QueryHeader_pb = require('./QueryHeader_pb.js');
 goog.object.extend(proto, QueryHeader_pb);
 var ResponseCode_pb = require('./ResponseCode_pb.js');

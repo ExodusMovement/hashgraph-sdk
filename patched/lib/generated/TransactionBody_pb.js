@@ -12,18 +12,6 @@ var jspb = require('../google-protobuf.patched/google-protobuf');
 var goog = jspb;
 const { proto } = jspb.globalScope
 
-var SystemDelete_pb = require('./SystemDelete_pb.js');
-goog.object.extend(proto, SystemDelete_pb);
-var SystemUndelete_pb = require('./SystemUndelete_pb.js');
-goog.object.extend(proto, SystemUndelete_pb);
-var Freeze_pb = require('./Freeze_pb.js');
-goog.object.extend(proto, Freeze_pb);
-var ContractCall_pb = require('./ContractCall_pb.js');
-goog.object.extend(proto, ContractCall_pb);
-var ContractCreate_pb = require('./ContractCreate_pb.js');
-goog.object.extend(proto, ContractCreate_pb);
-var ContractUpdate_pb = require('./ContractUpdate_pb.js');
-goog.object.extend(proto, ContractUpdate_pb);
 var CryptoAddLiveHash_pb = require('./CryptoAddLiveHash_pb.js');
 goog.object.extend(proto, CryptoAddLiveHash_pb);
 var CryptoCreate_pb = require('./CryptoCreate_pb.js');
@@ -36,28 +24,10 @@ var CryptoTransfer_pb = require('./CryptoTransfer_pb.js');
 goog.object.extend(proto, CryptoTransfer_pb);
 var CryptoUpdate_pb = require('./CryptoUpdate_pb.js');
 goog.object.extend(proto, CryptoUpdate_pb);
-var FileAppend_pb = require('./FileAppend_pb.js');
-goog.object.extend(proto, FileAppend_pb);
-var FileCreate_pb = require('./FileCreate_pb.js');
-goog.object.extend(proto, FileCreate_pb);
-var FileDelete_pb = require('./FileDelete_pb.js');
-goog.object.extend(proto, FileDelete_pb);
-var FileUpdate_pb = require('./FileUpdate_pb.js');
-goog.object.extend(proto, FileUpdate_pb);
 var Duration_pb = require('./Duration_pb.js');
 goog.object.extend(proto, Duration_pb);
 var BasicTypes_pb = require('./BasicTypes_pb.js');
 goog.object.extend(proto, BasicTypes_pb);
-var ContractDelete_pb = require('./ContractDelete_pb.js');
-goog.object.extend(proto, ContractDelete_pb);
-var ConsensusCreateTopic_pb = require('./ConsensusCreateTopic_pb.js');
-goog.object.extend(proto, ConsensusCreateTopic_pb);
-var ConsensusUpdateTopic_pb = require('./ConsensusUpdateTopic_pb.js');
-goog.object.extend(proto, ConsensusUpdateTopic_pb);
-var ConsensusDeleteTopic_pb = require('./ConsensusDeleteTopic_pb.js');
-goog.object.extend(proto, ConsensusDeleteTopic_pb);
-var ConsensusSubmitMessage_pb = require('./ConsensusSubmitMessage_pb.js');
-goog.object.extend(proto, ConsensusSubmitMessage_pb);
 goog.exportSymbol('proto.proto.TransactionBody', null, jspb.globalScope);
 goog.exportSymbol('proto.proto.TransactionBody.DataCase', null, jspb.globalScope);
 /**
@@ -90,34 +60,19 @@ if (goog.DEBUG && !COMPILED) {
  * @private {!Array<!Array<number>>}
  * @const
  */
-proto.proto.TransactionBody.oneofGroups_ = [[7,8,9,22,10,11,12,13,14,15,16,17,18,19,20,21,23,24,25,26,27]];
+proto.proto.TransactionBody.oneofGroups_ = [[10,11,12,13,14,15]];
 
 /**
  * @enum {number}
  */
 proto.proto.TransactionBody.DataCase = {
   DATA_NOT_SET: 0,
-  CONTRACTCALL: 7,
-  CONTRACTCREATEINSTANCE: 8,
-  CONTRACTUPDATEINSTANCE: 9,
-  CONTRACTDELETEINSTANCE: 22,
   CRYPTOADDLIVEHASH: 10,
   CRYPTOCREATEACCOUNT: 11,
   CRYPTODELETE: 12,
   CRYPTODELETELIVEHASH: 13,
   CRYPTOTRANSFER: 14,
-  CRYPTOUPDATEACCOUNT: 15,
-  FILEAPPEND: 16,
-  FILECREATE: 17,
-  FILEDELETE: 18,
-  FILEUPDATE: 19,
-  SYSTEMDELETE: 20,
-  SYSTEMUNDELETE: 21,
-  FREEZE: 23,
-  CONSENSUSCREATETOPIC: 24,
-  CONSENSUSUPDATETOPIC: 25,
-  CONSENSUSDELETETOPIC: 26,
-  CONSENSUSSUBMITMESSAGE: 27
+  CRYPTOUPDATEACCOUNT: 15
 };
 
 /**
@@ -164,27 +119,12 @@ proto.proto.TransactionBody.toObject = function(includeInstance, msg) {
     transactionvalidduration: (f = msg.getTransactionvalidduration()) && Duration_pb.Duration.toObject(includeInstance, f),
     generaterecord: jspb.Message.getBooleanFieldWithDefault(msg, 5, false),
     memo: jspb.Message.getFieldWithDefault(msg, 6, ""),
-    contractcall: (f = msg.getContractcall()) && ContractCall_pb.ContractCallTransactionBody.toObject(includeInstance, f),
-    contractcreateinstance: (f = msg.getContractcreateinstance()) && ContractCreate_pb.ContractCreateTransactionBody.toObject(includeInstance, f),
-    contractupdateinstance: (f = msg.getContractupdateinstance()) && ContractUpdate_pb.ContractUpdateTransactionBody.toObject(includeInstance, f),
-    contractdeleteinstance: (f = msg.getContractdeleteinstance()) && ContractDelete_pb.ContractDeleteTransactionBody.toObject(includeInstance, f),
     cryptoaddlivehash: (f = msg.getCryptoaddlivehash()) && CryptoAddLiveHash_pb.CryptoAddLiveHashTransactionBody.toObject(includeInstance, f),
     cryptocreateaccount: (f = msg.getCryptocreateaccount()) && CryptoCreate_pb.CryptoCreateTransactionBody.toObject(includeInstance, f),
     cryptodelete: (f = msg.getCryptodelete()) && CryptoDelete_pb.CryptoDeleteTransactionBody.toObject(includeInstance, f),
     cryptodeletelivehash: (f = msg.getCryptodeletelivehash()) && CryptoDeleteLiveHash_pb.CryptoDeleteLiveHashTransactionBody.toObject(includeInstance, f),
     cryptotransfer: (f = msg.getCryptotransfer()) && CryptoTransfer_pb.CryptoTransferTransactionBody.toObject(includeInstance, f),
-    cryptoupdateaccount: (f = msg.getCryptoupdateaccount()) && CryptoUpdate_pb.CryptoUpdateTransactionBody.toObject(includeInstance, f),
-    fileappend: (f = msg.getFileappend()) && FileAppend_pb.FileAppendTransactionBody.toObject(includeInstance, f),
-    filecreate: (f = msg.getFilecreate()) && FileCreate_pb.FileCreateTransactionBody.toObject(includeInstance, f),
-    filedelete: (f = msg.getFiledelete()) && FileDelete_pb.FileDeleteTransactionBody.toObject(includeInstance, f),
-    fileupdate: (f = msg.getFileupdate()) && FileUpdate_pb.FileUpdateTransactionBody.toObject(includeInstance, f),
-    systemdelete: (f = msg.getSystemdelete()) && SystemDelete_pb.SystemDeleteTransactionBody.toObject(includeInstance, f),
-    systemundelete: (f = msg.getSystemundelete()) && SystemUndelete_pb.SystemUndeleteTransactionBody.toObject(includeInstance, f),
-    freeze: (f = msg.getFreeze()) && Freeze_pb.FreezeTransactionBody.toObject(includeInstance, f),
-    consensuscreatetopic: (f = msg.getConsensuscreatetopic()) && ConsensusCreateTopic_pb.ConsensusCreateTopicTransactionBody.toObject(includeInstance, f),
-    consensusupdatetopic: (f = msg.getConsensusupdatetopic()) && ConsensusUpdateTopic_pb.ConsensusUpdateTopicTransactionBody.toObject(includeInstance, f),
-    consensusdeletetopic: (f = msg.getConsensusdeletetopic()) && ConsensusDeleteTopic_pb.ConsensusDeleteTopicTransactionBody.toObject(includeInstance, f),
-    consensussubmitmessage: (f = msg.getConsensussubmitmessage()) && ConsensusSubmitMessage_pb.ConsensusSubmitMessageTransactionBody.toObject(includeInstance, f)
+    cryptoupdateaccount: (f = msg.getCryptoupdateaccount()) && CryptoUpdate_pb.CryptoUpdateTransactionBody.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -248,26 +188,6 @@ proto.proto.TransactionBody.deserializeBinaryFromReader = function(msg, reader) 
       var value = /** @type {string} */ (reader.readString());
       msg.setMemo(value);
       break;
-    case 7:
-      var value = new ContractCall_pb.ContractCallTransactionBody;
-      reader.readMessage(value,ContractCall_pb.ContractCallTransactionBody.deserializeBinaryFromReader);
-      msg.setContractcall(value);
-      break;
-    case 8:
-      var value = new ContractCreate_pb.ContractCreateTransactionBody;
-      reader.readMessage(value,ContractCreate_pb.ContractCreateTransactionBody.deserializeBinaryFromReader);
-      msg.setContractcreateinstance(value);
-      break;
-    case 9:
-      var value = new ContractUpdate_pb.ContractUpdateTransactionBody;
-      reader.readMessage(value,ContractUpdate_pb.ContractUpdateTransactionBody.deserializeBinaryFromReader);
-      msg.setContractupdateinstance(value);
-      break;
-    case 22:
-      var value = new ContractDelete_pb.ContractDeleteTransactionBody;
-      reader.readMessage(value,ContractDelete_pb.ContractDeleteTransactionBody.deserializeBinaryFromReader);
-      msg.setContractdeleteinstance(value);
-      break;
     case 10:
       var value = new CryptoAddLiveHash_pb.CryptoAddLiveHashTransactionBody;
       reader.readMessage(value,CryptoAddLiveHash_pb.CryptoAddLiveHashTransactionBody.deserializeBinaryFromReader);
@@ -297,61 +217,6 @@ proto.proto.TransactionBody.deserializeBinaryFromReader = function(msg, reader) 
       var value = new CryptoUpdate_pb.CryptoUpdateTransactionBody;
       reader.readMessage(value,CryptoUpdate_pb.CryptoUpdateTransactionBody.deserializeBinaryFromReader);
       msg.setCryptoupdateaccount(value);
-      break;
-    case 16:
-      var value = new FileAppend_pb.FileAppendTransactionBody;
-      reader.readMessage(value,FileAppend_pb.FileAppendTransactionBody.deserializeBinaryFromReader);
-      msg.setFileappend(value);
-      break;
-    case 17:
-      var value = new FileCreate_pb.FileCreateTransactionBody;
-      reader.readMessage(value,FileCreate_pb.FileCreateTransactionBody.deserializeBinaryFromReader);
-      msg.setFilecreate(value);
-      break;
-    case 18:
-      var value = new FileDelete_pb.FileDeleteTransactionBody;
-      reader.readMessage(value,FileDelete_pb.FileDeleteTransactionBody.deserializeBinaryFromReader);
-      msg.setFiledelete(value);
-      break;
-    case 19:
-      var value = new FileUpdate_pb.FileUpdateTransactionBody;
-      reader.readMessage(value,FileUpdate_pb.FileUpdateTransactionBody.deserializeBinaryFromReader);
-      msg.setFileupdate(value);
-      break;
-    case 20:
-      var value = new SystemDelete_pb.SystemDeleteTransactionBody;
-      reader.readMessage(value,SystemDelete_pb.SystemDeleteTransactionBody.deserializeBinaryFromReader);
-      msg.setSystemdelete(value);
-      break;
-    case 21:
-      var value = new SystemUndelete_pb.SystemUndeleteTransactionBody;
-      reader.readMessage(value,SystemUndelete_pb.SystemUndeleteTransactionBody.deserializeBinaryFromReader);
-      msg.setSystemundelete(value);
-      break;
-    case 23:
-      var value = new Freeze_pb.FreezeTransactionBody;
-      reader.readMessage(value,Freeze_pb.FreezeTransactionBody.deserializeBinaryFromReader);
-      msg.setFreeze(value);
-      break;
-    case 24:
-      var value = new ConsensusCreateTopic_pb.ConsensusCreateTopicTransactionBody;
-      reader.readMessage(value,ConsensusCreateTopic_pb.ConsensusCreateTopicTransactionBody.deserializeBinaryFromReader);
-      msg.setConsensuscreatetopic(value);
-      break;
-    case 25:
-      var value = new ConsensusUpdateTopic_pb.ConsensusUpdateTopicTransactionBody;
-      reader.readMessage(value,ConsensusUpdateTopic_pb.ConsensusUpdateTopicTransactionBody.deserializeBinaryFromReader);
-      msg.setConsensusupdatetopic(value);
-      break;
-    case 26:
-      var value = new ConsensusDeleteTopic_pb.ConsensusDeleteTopicTransactionBody;
-      reader.readMessage(value,ConsensusDeleteTopic_pb.ConsensusDeleteTopicTransactionBody.deserializeBinaryFromReader);
-      msg.setConsensusdeletetopic(value);
-      break;
-    case 27:
-      var value = new ConsensusSubmitMessage_pb.ConsensusSubmitMessageTransactionBody;
-      reader.readMessage(value,ConsensusSubmitMessage_pb.ConsensusSubmitMessageTransactionBody.deserializeBinaryFromReader);
-      msg.setConsensussubmitmessage(value);
       break;
     default:
       reader.skipField();
@@ -427,38 +292,6 @@ proto.proto.TransactionBody.serializeBinaryToWriter = function(message, writer) 
       f
     );
   }
-  f = message.getContractcall();
-  if (f != null) {
-    writer.writeMessage(
-      7,
-      f,
-      ContractCall_pb.ContractCallTransactionBody.serializeBinaryToWriter
-    );
-  }
-  f = message.getContractcreateinstance();
-  if (f != null) {
-    writer.writeMessage(
-      8,
-      f,
-      ContractCreate_pb.ContractCreateTransactionBody.serializeBinaryToWriter
-    );
-  }
-  f = message.getContractupdateinstance();
-  if (f != null) {
-    writer.writeMessage(
-      9,
-      f,
-      ContractUpdate_pb.ContractUpdateTransactionBody.serializeBinaryToWriter
-    );
-  }
-  f = message.getContractdeleteinstance();
-  if (f != null) {
-    writer.writeMessage(
-      22,
-      f,
-      ContractDelete_pb.ContractDeleteTransactionBody.serializeBinaryToWriter
-    );
-  }
   f = message.getCryptoaddlivehash();
   if (f != null) {
     writer.writeMessage(
@@ -505,94 +338,6 @@ proto.proto.TransactionBody.serializeBinaryToWriter = function(message, writer) 
       15,
       f,
       CryptoUpdate_pb.CryptoUpdateTransactionBody.serializeBinaryToWriter
-    );
-  }
-  f = message.getFileappend();
-  if (f != null) {
-    writer.writeMessage(
-      16,
-      f,
-      FileAppend_pb.FileAppendTransactionBody.serializeBinaryToWriter
-    );
-  }
-  f = message.getFilecreate();
-  if (f != null) {
-    writer.writeMessage(
-      17,
-      f,
-      FileCreate_pb.FileCreateTransactionBody.serializeBinaryToWriter
-    );
-  }
-  f = message.getFiledelete();
-  if (f != null) {
-    writer.writeMessage(
-      18,
-      f,
-      FileDelete_pb.FileDeleteTransactionBody.serializeBinaryToWriter
-    );
-  }
-  f = message.getFileupdate();
-  if (f != null) {
-    writer.writeMessage(
-      19,
-      f,
-      FileUpdate_pb.FileUpdateTransactionBody.serializeBinaryToWriter
-    );
-  }
-  f = message.getSystemdelete();
-  if (f != null) {
-    writer.writeMessage(
-      20,
-      f,
-      SystemDelete_pb.SystemDeleteTransactionBody.serializeBinaryToWriter
-    );
-  }
-  f = message.getSystemundelete();
-  if (f != null) {
-    writer.writeMessage(
-      21,
-      f,
-      SystemUndelete_pb.SystemUndeleteTransactionBody.serializeBinaryToWriter
-    );
-  }
-  f = message.getFreeze();
-  if (f != null) {
-    writer.writeMessage(
-      23,
-      f,
-      Freeze_pb.FreezeTransactionBody.serializeBinaryToWriter
-    );
-  }
-  f = message.getConsensuscreatetopic();
-  if (f != null) {
-    writer.writeMessage(
-      24,
-      f,
-      ConsensusCreateTopic_pb.ConsensusCreateTopicTransactionBody.serializeBinaryToWriter
-    );
-  }
-  f = message.getConsensusupdatetopic();
-  if (f != null) {
-    writer.writeMessage(
-      25,
-      f,
-      ConsensusUpdateTopic_pb.ConsensusUpdateTopicTransactionBody.serializeBinaryToWriter
-    );
-  }
-  f = message.getConsensusdeletetopic();
-  if (f != null) {
-    writer.writeMessage(
-      26,
-      f,
-      ConsensusDeleteTopic_pb.ConsensusDeleteTopicTransactionBody.serializeBinaryToWriter
-    );
-  }
-  f = message.getConsensussubmitmessage();
-  if (f != null) {
-    writer.writeMessage(
-      27,
-      f,
-      ConsensusSubmitMessage_pb.ConsensusSubmitMessageTransactionBody.serializeBinaryToWriter
     );
   }
 };
@@ -760,154 +505,6 @@ proto.proto.TransactionBody.prototype.getMemo = function() {
  */
 proto.proto.TransactionBody.prototype.setMemo = function(value) {
   return jspb.Message.setProto3StringField(this, 6, value);
-};
-
-
-/**
- * optional ContractCallTransactionBody contractCall = 7;
- * @return {?proto.proto.ContractCallTransactionBody}
- */
-proto.proto.TransactionBody.prototype.getContractcall = function() {
-  return /** @type{?proto.proto.ContractCallTransactionBody} */ (
-    jspb.Message.getWrapperField(this, ContractCall_pb.ContractCallTransactionBody, 7));
-};
-
-
-/**
- * @param {?proto.proto.ContractCallTransactionBody|undefined} value
- * @return {!proto.proto.TransactionBody} returns this
-*/
-proto.proto.TransactionBody.prototype.setContractcall = function(value) {
-  return jspb.Message.setOneofWrapperField(this, 7, proto.proto.TransactionBody.oneofGroups_[0], value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.proto.TransactionBody} returns this
- */
-proto.proto.TransactionBody.prototype.clearContractcall = function() {
-  return this.setContractcall(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.proto.TransactionBody.prototype.hasContractcall = function() {
-  return jspb.Message.getField(this, 7) != null;
-};
-
-
-/**
- * optional ContractCreateTransactionBody contractCreateInstance = 8;
- * @return {?proto.proto.ContractCreateTransactionBody}
- */
-proto.proto.TransactionBody.prototype.getContractcreateinstance = function() {
-  return /** @type{?proto.proto.ContractCreateTransactionBody} */ (
-    jspb.Message.getWrapperField(this, ContractCreate_pb.ContractCreateTransactionBody, 8));
-};
-
-
-/**
- * @param {?proto.proto.ContractCreateTransactionBody|undefined} value
- * @return {!proto.proto.TransactionBody} returns this
-*/
-proto.proto.TransactionBody.prototype.setContractcreateinstance = function(value) {
-  return jspb.Message.setOneofWrapperField(this, 8, proto.proto.TransactionBody.oneofGroups_[0], value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.proto.TransactionBody} returns this
- */
-proto.proto.TransactionBody.prototype.clearContractcreateinstance = function() {
-  return this.setContractcreateinstance(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.proto.TransactionBody.prototype.hasContractcreateinstance = function() {
-  return jspb.Message.getField(this, 8) != null;
-};
-
-
-/**
- * optional ContractUpdateTransactionBody contractUpdateInstance = 9;
- * @return {?proto.proto.ContractUpdateTransactionBody}
- */
-proto.proto.TransactionBody.prototype.getContractupdateinstance = function() {
-  return /** @type{?proto.proto.ContractUpdateTransactionBody} */ (
-    jspb.Message.getWrapperField(this, ContractUpdate_pb.ContractUpdateTransactionBody, 9));
-};
-
-
-/**
- * @param {?proto.proto.ContractUpdateTransactionBody|undefined} value
- * @return {!proto.proto.TransactionBody} returns this
-*/
-proto.proto.TransactionBody.prototype.setContractupdateinstance = function(value) {
-  return jspb.Message.setOneofWrapperField(this, 9, proto.proto.TransactionBody.oneofGroups_[0], value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.proto.TransactionBody} returns this
- */
-proto.proto.TransactionBody.prototype.clearContractupdateinstance = function() {
-  return this.setContractupdateinstance(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.proto.TransactionBody.prototype.hasContractupdateinstance = function() {
-  return jspb.Message.getField(this, 9) != null;
-};
-
-
-/**
- * optional ContractDeleteTransactionBody contractDeleteInstance = 22;
- * @return {?proto.proto.ContractDeleteTransactionBody}
- */
-proto.proto.TransactionBody.prototype.getContractdeleteinstance = function() {
-  return /** @type{?proto.proto.ContractDeleteTransactionBody} */ (
-    jspb.Message.getWrapperField(this, ContractDelete_pb.ContractDeleteTransactionBody, 22));
-};
-
-
-/**
- * @param {?proto.proto.ContractDeleteTransactionBody|undefined} value
- * @return {!proto.proto.TransactionBody} returns this
-*/
-proto.proto.TransactionBody.prototype.setContractdeleteinstance = function(value) {
-  return jspb.Message.setOneofWrapperField(this, 22, proto.proto.TransactionBody.oneofGroups_[0], value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.proto.TransactionBody} returns this
- */
-proto.proto.TransactionBody.prototype.clearContractdeleteinstance = function() {
-  return this.setContractdeleteinstance(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.proto.TransactionBody.prototype.hasContractdeleteinstance = function() {
-  return jspb.Message.getField(this, 22) != null;
 };
 
 
@@ -1130,413 +727,6 @@ proto.proto.TransactionBody.prototype.clearCryptoupdateaccount = function() {
  */
 proto.proto.TransactionBody.prototype.hasCryptoupdateaccount = function() {
   return jspb.Message.getField(this, 15) != null;
-};
-
-
-/**
- * optional FileAppendTransactionBody fileAppend = 16;
- * @return {?proto.proto.FileAppendTransactionBody}
- */
-proto.proto.TransactionBody.prototype.getFileappend = function() {
-  return /** @type{?proto.proto.FileAppendTransactionBody} */ (
-    jspb.Message.getWrapperField(this, FileAppend_pb.FileAppendTransactionBody, 16));
-};
-
-
-/**
- * @param {?proto.proto.FileAppendTransactionBody|undefined} value
- * @return {!proto.proto.TransactionBody} returns this
-*/
-proto.proto.TransactionBody.prototype.setFileappend = function(value) {
-  return jspb.Message.setOneofWrapperField(this, 16, proto.proto.TransactionBody.oneofGroups_[0], value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.proto.TransactionBody} returns this
- */
-proto.proto.TransactionBody.prototype.clearFileappend = function() {
-  return this.setFileappend(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.proto.TransactionBody.prototype.hasFileappend = function() {
-  return jspb.Message.getField(this, 16) != null;
-};
-
-
-/**
- * optional FileCreateTransactionBody fileCreate = 17;
- * @return {?proto.proto.FileCreateTransactionBody}
- */
-proto.proto.TransactionBody.prototype.getFilecreate = function() {
-  return /** @type{?proto.proto.FileCreateTransactionBody} */ (
-    jspb.Message.getWrapperField(this, FileCreate_pb.FileCreateTransactionBody, 17));
-};
-
-
-/**
- * @param {?proto.proto.FileCreateTransactionBody|undefined} value
- * @return {!proto.proto.TransactionBody} returns this
-*/
-proto.proto.TransactionBody.prototype.setFilecreate = function(value) {
-  return jspb.Message.setOneofWrapperField(this, 17, proto.proto.TransactionBody.oneofGroups_[0], value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.proto.TransactionBody} returns this
- */
-proto.proto.TransactionBody.prototype.clearFilecreate = function() {
-  return this.setFilecreate(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.proto.TransactionBody.prototype.hasFilecreate = function() {
-  return jspb.Message.getField(this, 17) != null;
-};
-
-
-/**
- * optional FileDeleteTransactionBody fileDelete = 18;
- * @return {?proto.proto.FileDeleteTransactionBody}
- */
-proto.proto.TransactionBody.prototype.getFiledelete = function() {
-  return /** @type{?proto.proto.FileDeleteTransactionBody} */ (
-    jspb.Message.getWrapperField(this, FileDelete_pb.FileDeleteTransactionBody, 18));
-};
-
-
-/**
- * @param {?proto.proto.FileDeleteTransactionBody|undefined} value
- * @return {!proto.proto.TransactionBody} returns this
-*/
-proto.proto.TransactionBody.prototype.setFiledelete = function(value) {
-  return jspb.Message.setOneofWrapperField(this, 18, proto.proto.TransactionBody.oneofGroups_[0], value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.proto.TransactionBody} returns this
- */
-proto.proto.TransactionBody.prototype.clearFiledelete = function() {
-  return this.setFiledelete(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.proto.TransactionBody.prototype.hasFiledelete = function() {
-  return jspb.Message.getField(this, 18) != null;
-};
-
-
-/**
- * optional FileUpdateTransactionBody fileUpdate = 19;
- * @return {?proto.proto.FileUpdateTransactionBody}
- */
-proto.proto.TransactionBody.prototype.getFileupdate = function() {
-  return /** @type{?proto.proto.FileUpdateTransactionBody} */ (
-    jspb.Message.getWrapperField(this, FileUpdate_pb.FileUpdateTransactionBody, 19));
-};
-
-
-/**
- * @param {?proto.proto.FileUpdateTransactionBody|undefined} value
- * @return {!proto.proto.TransactionBody} returns this
-*/
-proto.proto.TransactionBody.prototype.setFileupdate = function(value) {
-  return jspb.Message.setOneofWrapperField(this, 19, proto.proto.TransactionBody.oneofGroups_[0], value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.proto.TransactionBody} returns this
- */
-proto.proto.TransactionBody.prototype.clearFileupdate = function() {
-  return this.setFileupdate(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.proto.TransactionBody.prototype.hasFileupdate = function() {
-  return jspb.Message.getField(this, 19) != null;
-};
-
-
-/**
- * optional SystemDeleteTransactionBody systemDelete = 20;
- * @return {?proto.proto.SystemDeleteTransactionBody}
- */
-proto.proto.TransactionBody.prototype.getSystemdelete = function() {
-  return /** @type{?proto.proto.SystemDeleteTransactionBody} */ (
-    jspb.Message.getWrapperField(this, SystemDelete_pb.SystemDeleteTransactionBody, 20));
-};
-
-
-/**
- * @param {?proto.proto.SystemDeleteTransactionBody|undefined} value
- * @return {!proto.proto.TransactionBody} returns this
-*/
-proto.proto.TransactionBody.prototype.setSystemdelete = function(value) {
-  return jspb.Message.setOneofWrapperField(this, 20, proto.proto.TransactionBody.oneofGroups_[0], value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.proto.TransactionBody} returns this
- */
-proto.proto.TransactionBody.prototype.clearSystemdelete = function() {
-  return this.setSystemdelete(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.proto.TransactionBody.prototype.hasSystemdelete = function() {
-  return jspb.Message.getField(this, 20) != null;
-};
-
-
-/**
- * optional SystemUndeleteTransactionBody systemUndelete = 21;
- * @return {?proto.proto.SystemUndeleteTransactionBody}
- */
-proto.proto.TransactionBody.prototype.getSystemundelete = function() {
-  return /** @type{?proto.proto.SystemUndeleteTransactionBody} */ (
-    jspb.Message.getWrapperField(this, SystemUndelete_pb.SystemUndeleteTransactionBody, 21));
-};
-
-
-/**
- * @param {?proto.proto.SystemUndeleteTransactionBody|undefined} value
- * @return {!proto.proto.TransactionBody} returns this
-*/
-proto.proto.TransactionBody.prototype.setSystemundelete = function(value) {
-  return jspb.Message.setOneofWrapperField(this, 21, proto.proto.TransactionBody.oneofGroups_[0], value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.proto.TransactionBody} returns this
- */
-proto.proto.TransactionBody.prototype.clearSystemundelete = function() {
-  return this.setSystemundelete(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.proto.TransactionBody.prototype.hasSystemundelete = function() {
-  return jspb.Message.getField(this, 21) != null;
-};
-
-
-/**
- * optional FreezeTransactionBody freeze = 23;
- * @return {?proto.proto.FreezeTransactionBody}
- */
-proto.proto.TransactionBody.prototype.getFreeze = function() {
-  return /** @type{?proto.proto.FreezeTransactionBody} */ (
-    jspb.Message.getWrapperField(this, Freeze_pb.FreezeTransactionBody, 23));
-};
-
-
-/**
- * @param {?proto.proto.FreezeTransactionBody|undefined} value
- * @return {!proto.proto.TransactionBody} returns this
-*/
-proto.proto.TransactionBody.prototype.setFreeze = function(value) {
-  return jspb.Message.setOneofWrapperField(this, 23, proto.proto.TransactionBody.oneofGroups_[0], value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.proto.TransactionBody} returns this
- */
-proto.proto.TransactionBody.prototype.clearFreeze = function() {
-  return this.setFreeze(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.proto.TransactionBody.prototype.hasFreeze = function() {
-  return jspb.Message.getField(this, 23) != null;
-};
-
-
-/**
- * optional ConsensusCreateTopicTransactionBody consensusCreateTopic = 24;
- * @return {?proto.proto.ConsensusCreateTopicTransactionBody}
- */
-proto.proto.TransactionBody.prototype.getConsensuscreatetopic = function() {
-  return /** @type{?proto.proto.ConsensusCreateTopicTransactionBody} */ (
-    jspb.Message.getWrapperField(this, ConsensusCreateTopic_pb.ConsensusCreateTopicTransactionBody, 24));
-};
-
-
-/**
- * @param {?proto.proto.ConsensusCreateTopicTransactionBody|undefined} value
- * @return {!proto.proto.TransactionBody} returns this
-*/
-proto.proto.TransactionBody.prototype.setConsensuscreatetopic = function(value) {
-  return jspb.Message.setOneofWrapperField(this, 24, proto.proto.TransactionBody.oneofGroups_[0], value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.proto.TransactionBody} returns this
- */
-proto.proto.TransactionBody.prototype.clearConsensuscreatetopic = function() {
-  return this.setConsensuscreatetopic(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.proto.TransactionBody.prototype.hasConsensuscreatetopic = function() {
-  return jspb.Message.getField(this, 24) != null;
-};
-
-
-/**
- * optional ConsensusUpdateTopicTransactionBody consensusUpdateTopic = 25;
- * @return {?proto.proto.ConsensusUpdateTopicTransactionBody}
- */
-proto.proto.TransactionBody.prototype.getConsensusupdatetopic = function() {
-  return /** @type{?proto.proto.ConsensusUpdateTopicTransactionBody} */ (
-    jspb.Message.getWrapperField(this, ConsensusUpdateTopic_pb.ConsensusUpdateTopicTransactionBody, 25));
-};
-
-
-/**
- * @param {?proto.proto.ConsensusUpdateTopicTransactionBody|undefined} value
- * @return {!proto.proto.TransactionBody} returns this
-*/
-proto.proto.TransactionBody.prototype.setConsensusupdatetopic = function(value) {
-  return jspb.Message.setOneofWrapperField(this, 25, proto.proto.TransactionBody.oneofGroups_[0], value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.proto.TransactionBody} returns this
- */
-proto.proto.TransactionBody.prototype.clearConsensusupdatetopic = function() {
-  return this.setConsensusupdatetopic(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.proto.TransactionBody.prototype.hasConsensusupdatetopic = function() {
-  return jspb.Message.getField(this, 25) != null;
-};
-
-
-/**
- * optional ConsensusDeleteTopicTransactionBody consensusDeleteTopic = 26;
- * @return {?proto.proto.ConsensusDeleteTopicTransactionBody}
- */
-proto.proto.TransactionBody.prototype.getConsensusdeletetopic = function() {
-  return /** @type{?proto.proto.ConsensusDeleteTopicTransactionBody} */ (
-    jspb.Message.getWrapperField(this, ConsensusDeleteTopic_pb.ConsensusDeleteTopicTransactionBody, 26));
-};
-
-
-/**
- * @param {?proto.proto.ConsensusDeleteTopicTransactionBody|undefined} value
- * @return {!proto.proto.TransactionBody} returns this
-*/
-proto.proto.TransactionBody.prototype.setConsensusdeletetopic = function(value) {
-  return jspb.Message.setOneofWrapperField(this, 26, proto.proto.TransactionBody.oneofGroups_[0], value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.proto.TransactionBody} returns this
- */
-proto.proto.TransactionBody.prototype.clearConsensusdeletetopic = function() {
-  return this.setConsensusdeletetopic(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.proto.TransactionBody.prototype.hasConsensusdeletetopic = function() {
-  return jspb.Message.getField(this, 26) != null;
-};
-
-
-/**
- * optional ConsensusSubmitMessageTransactionBody consensusSubmitMessage = 27;
- * @return {?proto.proto.ConsensusSubmitMessageTransactionBody}
- */
-proto.proto.TransactionBody.prototype.getConsensussubmitmessage = function() {
-  return /** @type{?proto.proto.ConsensusSubmitMessageTransactionBody} */ (
-    jspb.Message.getWrapperField(this, ConsensusSubmitMessage_pb.ConsensusSubmitMessageTransactionBody, 27));
-};
-
-
-/**
- * @param {?proto.proto.ConsensusSubmitMessageTransactionBody|undefined} value
- * @return {!proto.proto.TransactionBody} returns this
-*/
-proto.proto.TransactionBody.prototype.setConsensussubmitmessage = function(value) {
-  return jspb.Message.setOneofWrapperField(this, 27, proto.proto.TransactionBody.oneofGroups_[0], value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.proto.TransactionBody} returns this
- */
-proto.proto.TransactionBody.prototype.clearConsensussubmitmessage = function() {
-  return this.setConsensussubmitmessage(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.proto.TransactionBody.prototype.hasConsensussubmitmessage = function() {
-  return jspb.Message.getField(this, 27) != null;
 };
 
 

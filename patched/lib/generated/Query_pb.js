@@ -16,14 +16,6 @@ var GetByKey_pb = require('./GetByKey_pb.js');
 goog.object.extend(proto, GetByKey_pb);
 var GetBySolidityID_pb = require('./GetBySolidityID_pb.js');
 goog.object.extend(proto, GetBySolidityID_pb);
-var ContractCallLocal_pb = require('./ContractCallLocal_pb.js');
-goog.object.extend(proto, ContractCallLocal_pb);
-var ContractGetInfo_pb = require('./ContractGetInfo_pb.js');
-goog.object.extend(proto, ContractGetInfo_pb);
-var ContractGetBytecode_pb = require('./ContractGetBytecode_pb.js');
-goog.object.extend(proto, ContractGetBytecode_pb);
-var ContractGetRecords_pb = require('./ContractGetRecords_pb.js');
-goog.object.extend(proto, ContractGetRecords_pb);
 var CryptoGetAccountBalance_pb = require('./CryptoGetAccountBalance_pb.js');
 goog.object.extend(proto, CryptoGetAccountBalance_pb);
 var CryptoGetAccountRecords_pb = require('./CryptoGetAccountRecords_pb.js');
@@ -34,18 +26,12 @@ var CryptoGetLiveHash_pb = require('./CryptoGetLiveHash_pb.js');
 goog.object.extend(proto, CryptoGetLiveHash_pb);
 var CryptoGetStakers_pb = require('./CryptoGetStakers_pb.js');
 goog.object.extend(proto, CryptoGetStakers_pb);
-var FileGetContents_pb = require('./FileGetContents_pb.js');
-goog.object.extend(proto, FileGetContents_pb);
-var FileGetInfo_pb = require('./FileGetInfo_pb.js');
-goog.object.extend(proto, FileGetInfo_pb);
 var TransactionGetReceipt_pb = require('./TransactionGetReceipt_pb.js');
 goog.object.extend(proto, TransactionGetReceipt_pb);
 var TransactionGetRecord_pb = require('./TransactionGetRecord_pb.js');
 goog.object.extend(proto, TransactionGetRecord_pb);
 var TransactionGetFastRecord_pb = require('./TransactionGetFastRecord_pb.js');
 goog.object.extend(proto, TransactionGetFastRecord_pb);
-var ConsensusGetTopicInfo_pb = require('./ConsensusGetTopicInfo_pb.js');
-goog.object.extend(proto, ConsensusGetTopicInfo_pb);
 var NetworkGetVersionInfo_pb = require('./NetworkGetVersionInfo_pb.js');
 goog.object.extend(proto, NetworkGetVersionInfo_pb);
 goog.exportSymbol('proto.proto.Query', null, jspb.globalScope);
@@ -80,7 +66,7 @@ if (goog.DEBUG && !COMPILED) {
  * @private {!Array<!Array<number>>}
  * @const
  */
-proto.proto.Query.oneofGroups_ = [[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,50,51]];
+proto.proto.Query.oneofGroups_ = [[1,2,7,8,9,10,11,14,15,16,51]];
 
 /**
  * @enum {number}
@@ -89,21 +75,14 @@ proto.proto.Query.QueryCase = {
   QUERY_NOT_SET: 0,
   GETBYKEY: 1,
   GETBYSOLIDITYID: 2,
-  CONTRACTCALLLOCAL: 3,
-  CONTRACTGETINFO: 4,
-  CONTRACTGETBYTECODE: 5,
-  CONTRACTGETRECORDS: 6,
   CRYPTOGETACCOUNTBALANCE: 7,
   CRYPTOGETACCOUNTRECORDS: 8,
   CRYPTOGETINFO: 9,
   CRYPTOGETLIVEHASH: 10,
   CRYPTOGETPROXYSTAKERS: 11,
-  FILEGETCONTENTS: 12,
-  FILEGETINFO: 13,
   TRANSACTIONGETRECEIPT: 14,
   TRANSACTIONGETRECORD: 15,
   TRANSACTIONGETFASTRECORD: 16,
-  CONSENSUSGETTOPICINFO: 50,
   NETWORKGETVERSIONINFO: 51
 };
 
@@ -147,21 +126,14 @@ proto.proto.Query.toObject = function(includeInstance, msg) {
   var f, obj = {
     getbykey: (f = msg.getGetbykey()) && GetByKey_pb.GetByKeyQuery.toObject(includeInstance, f),
     getbysolidityid: (f = msg.getGetbysolidityid()) && GetBySolidityID_pb.GetBySolidityIDQuery.toObject(includeInstance, f),
-    contractcalllocal: (f = msg.getContractcalllocal()) && ContractCallLocal_pb.ContractCallLocalQuery.toObject(includeInstance, f),
-    contractgetinfo: (f = msg.getContractgetinfo()) && ContractGetInfo_pb.ContractGetInfoQuery.toObject(includeInstance, f),
-    contractgetbytecode: (f = msg.getContractgetbytecode()) && ContractGetBytecode_pb.ContractGetBytecodeQuery.toObject(includeInstance, f),
-    contractgetrecords: (f = msg.getContractgetrecords()) && ContractGetRecords_pb.ContractGetRecordsQuery.toObject(includeInstance, f),
     cryptogetaccountbalance: (f = msg.getCryptogetaccountbalance()) && CryptoGetAccountBalance_pb.CryptoGetAccountBalanceQuery.toObject(includeInstance, f),
     cryptogetaccountrecords: (f = msg.getCryptogetaccountrecords()) && CryptoGetAccountRecords_pb.CryptoGetAccountRecordsQuery.toObject(includeInstance, f),
     cryptogetinfo: (f = msg.getCryptogetinfo()) && CryptoGetInfo_pb.CryptoGetInfoQuery.toObject(includeInstance, f),
     cryptogetlivehash: (f = msg.getCryptogetlivehash()) && CryptoGetLiveHash_pb.CryptoGetLiveHashQuery.toObject(includeInstance, f),
     cryptogetproxystakers: (f = msg.getCryptogetproxystakers()) && CryptoGetStakers_pb.CryptoGetStakersQuery.toObject(includeInstance, f),
-    filegetcontents: (f = msg.getFilegetcontents()) && FileGetContents_pb.FileGetContentsQuery.toObject(includeInstance, f),
-    filegetinfo: (f = msg.getFilegetinfo()) && FileGetInfo_pb.FileGetInfoQuery.toObject(includeInstance, f),
     transactiongetreceipt: (f = msg.getTransactiongetreceipt()) && TransactionGetReceipt_pb.TransactionGetReceiptQuery.toObject(includeInstance, f),
     transactiongetrecord: (f = msg.getTransactiongetrecord()) && TransactionGetRecord_pb.TransactionGetRecordQuery.toObject(includeInstance, f),
     transactiongetfastrecord: (f = msg.getTransactiongetfastrecord()) && TransactionGetFastRecord_pb.TransactionGetFastRecordQuery.toObject(includeInstance, f),
-    consensusgettopicinfo: (f = msg.getConsensusgettopicinfo()) && ConsensusGetTopicInfo_pb.ConsensusGetTopicInfoQuery.toObject(includeInstance, f),
     networkgetversioninfo: (f = msg.getNetworkgetversioninfo()) && NetworkGetVersionInfo_pb.NetworkGetVersionInfoQuery.toObject(includeInstance, f)
   };
 
@@ -209,26 +181,6 @@ proto.proto.Query.deserializeBinaryFromReader = function(msg, reader) {
       reader.readMessage(value,GetBySolidityID_pb.GetBySolidityIDQuery.deserializeBinaryFromReader);
       msg.setGetbysolidityid(value);
       break;
-    case 3:
-      var value = new ContractCallLocal_pb.ContractCallLocalQuery;
-      reader.readMessage(value,ContractCallLocal_pb.ContractCallLocalQuery.deserializeBinaryFromReader);
-      msg.setContractcalllocal(value);
-      break;
-    case 4:
-      var value = new ContractGetInfo_pb.ContractGetInfoQuery;
-      reader.readMessage(value,ContractGetInfo_pb.ContractGetInfoQuery.deserializeBinaryFromReader);
-      msg.setContractgetinfo(value);
-      break;
-    case 5:
-      var value = new ContractGetBytecode_pb.ContractGetBytecodeQuery;
-      reader.readMessage(value,ContractGetBytecode_pb.ContractGetBytecodeQuery.deserializeBinaryFromReader);
-      msg.setContractgetbytecode(value);
-      break;
-    case 6:
-      var value = new ContractGetRecords_pb.ContractGetRecordsQuery;
-      reader.readMessage(value,ContractGetRecords_pb.ContractGetRecordsQuery.deserializeBinaryFromReader);
-      msg.setContractgetrecords(value);
-      break;
     case 7:
       var value = new CryptoGetAccountBalance_pb.CryptoGetAccountBalanceQuery;
       reader.readMessage(value,CryptoGetAccountBalance_pb.CryptoGetAccountBalanceQuery.deserializeBinaryFromReader);
@@ -254,16 +206,6 @@ proto.proto.Query.deserializeBinaryFromReader = function(msg, reader) {
       reader.readMessage(value,CryptoGetStakers_pb.CryptoGetStakersQuery.deserializeBinaryFromReader);
       msg.setCryptogetproxystakers(value);
       break;
-    case 12:
-      var value = new FileGetContents_pb.FileGetContentsQuery;
-      reader.readMessage(value,FileGetContents_pb.FileGetContentsQuery.deserializeBinaryFromReader);
-      msg.setFilegetcontents(value);
-      break;
-    case 13:
-      var value = new FileGetInfo_pb.FileGetInfoQuery;
-      reader.readMessage(value,FileGetInfo_pb.FileGetInfoQuery.deserializeBinaryFromReader);
-      msg.setFilegetinfo(value);
-      break;
     case 14:
       var value = new TransactionGetReceipt_pb.TransactionGetReceiptQuery;
       reader.readMessage(value,TransactionGetReceipt_pb.TransactionGetReceiptQuery.deserializeBinaryFromReader);
@@ -278,11 +220,6 @@ proto.proto.Query.deserializeBinaryFromReader = function(msg, reader) {
       var value = new TransactionGetFastRecord_pb.TransactionGetFastRecordQuery;
       reader.readMessage(value,TransactionGetFastRecord_pb.TransactionGetFastRecordQuery.deserializeBinaryFromReader);
       msg.setTransactiongetfastrecord(value);
-      break;
-    case 50:
-      var value = new ConsensusGetTopicInfo_pb.ConsensusGetTopicInfoQuery;
-      reader.readMessage(value,ConsensusGetTopicInfo_pb.ConsensusGetTopicInfoQuery.deserializeBinaryFromReader);
-      msg.setConsensusgettopicinfo(value);
       break;
     case 51:
       var value = new NetworkGetVersionInfo_pb.NetworkGetVersionInfoQuery;
@@ -334,38 +271,6 @@ proto.proto.Query.serializeBinaryToWriter = function(message, writer) {
       GetBySolidityID_pb.GetBySolidityIDQuery.serializeBinaryToWriter
     );
   }
-  f = message.getContractcalllocal();
-  if (f != null) {
-    writer.writeMessage(
-      3,
-      f,
-      ContractCallLocal_pb.ContractCallLocalQuery.serializeBinaryToWriter
-    );
-  }
-  f = message.getContractgetinfo();
-  if (f != null) {
-    writer.writeMessage(
-      4,
-      f,
-      ContractGetInfo_pb.ContractGetInfoQuery.serializeBinaryToWriter
-    );
-  }
-  f = message.getContractgetbytecode();
-  if (f != null) {
-    writer.writeMessage(
-      5,
-      f,
-      ContractGetBytecode_pb.ContractGetBytecodeQuery.serializeBinaryToWriter
-    );
-  }
-  f = message.getContractgetrecords();
-  if (f != null) {
-    writer.writeMessage(
-      6,
-      f,
-      ContractGetRecords_pb.ContractGetRecordsQuery.serializeBinaryToWriter
-    );
-  }
   f = message.getCryptogetaccountbalance();
   if (f != null) {
     writer.writeMessage(
@@ -406,22 +311,6 @@ proto.proto.Query.serializeBinaryToWriter = function(message, writer) {
       CryptoGetStakers_pb.CryptoGetStakersQuery.serializeBinaryToWriter
     );
   }
-  f = message.getFilegetcontents();
-  if (f != null) {
-    writer.writeMessage(
-      12,
-      f,
-      FileGetContents_pb.FileGetContentsQuery.serializeBinaryToWriter
-    );
-  }
-  f = message.getFilegetinfo();
-  if (f != null) {
-    writer.writeMessage(
-      13,
-      f,
-      FileGetInfo_pb.FileGetInfoQuery.serializeBinaryToWriter
-    );
-  }
   f = message.getTransactiongetreceipt();
   if (f != null) {
     writer.writeMessage(
@@ -444,14 +333,6 @@ proto.proto.Query.serializeBinaryToWriter = function(message, writer) {
       16,
       f,
       TransactionGetFastRecord_pb.TransactionGetFastRecordQuery.serializeBinaryToWriter
-    );
-  }
-  f = message.getConsensusgettopicinfo();
-  if (f != null) {
-    writer.writeMessage(
-      50,
-      f,
-      ConsensusGetTopicInfo_pb.ConsensusGetTopicInfoQuery.serializeBinaryToWriter
     );
   }
   f = message.getNetworkgetversioninfo();
@@ -536,154 +417,6 @@ proto.proto.Query.prototype.clearGetbysolidityid = function() {
  */
 proto.proto.Query.prototype.hasGetbysolidityid = function() {
   return jspb.Message.getField(this, 2) != null;
-};
-
-
-/**
- * optional ContractCallLocalQuery contractCallLocal = 3;
- * @return {?proto.proto.ContractCallLocalQuery}
- */
-proto.proto.Query.prototype.getContractcalllocal = function() {
-  return /** @type{?proto.proto.ContractCallLocalQuery} */ (
-    jspb.Message.getWrapperField(this, ContractCallLocal_pb.ContractCallLocalQuery, 3));
-};
-
-
-/**
- * @param {?proto.proto.ContractCallLocalQuery|undefined} value
- * @return {!proto.proto.Query} returns this
-*/
-proto.proto.Query.prototype.setContractcalllocal = function(value) {
-  return jspb.Message.setOneofWrapperField(this, 3, proto.proto.Query.oneofGroups_[0], value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.proto.Query} returns this
- */
-proto.proto.Query.prototype.clearContractcalllocal = function() {
-  return this.setContractcalllocal(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.proto.Query.prototype.hasContractcalllocal = function() {
-  return jspb.Message.getField(this, 3) != null;
-};
-
-
-/**
- * optional ContractGetInfoQuery contractGetInfo = 4;
- * @return {?proto.proto.ContractGetInfoQuery}
- */
-proto.proto.Query.prototype.getContractgetinfo = function() {
-  return /** @type{?proto.proto.ContractGetInfoQuery} */ (
-    jspb.Message.getWrapperField(this, ContractGetInfo_pb.ContractGetInfoQuery, 4));
-};
-
-
-/**
- * @param {?proto.proto.ContractGetInfoQuery|undefined} value
- * @return {!proto.proto.Query} returns this
-*/
-proto.proto.Query.prototype.setContractgetinfo = function(value) {
-  return jspb.Message.setOneofWrapperField(this, 4, proto.proto.Query.oneofGroups_[0], value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.proto.Query} returns this
- */
-proto.proto.Query.prototype.clearContractgetinfo = function() {
-  return this.setContractgetinfo(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.proto.Query.prototype.hasContractgetinfo = function() {
-  return jspb.Message.getField(this, 4) != null;
-};
-
-
-/**
- * optional ContractGetBytecodeQuery contractGetBytecode = 5;
- * @return {?proto.proto.ContractGetBytecodeQuery}
- */
-proto.proto.Query.prototype.getContractgetbytecode = function() {
-  return /** @type{?proto.proto.ContractGetBytecodeQuery} */ (
-    jspb.Message.getWrapperField(this, ContractGetBytecode_pb.ContractGetBytecodeQuery, 5));
-};
-
-
-/**
- * @param {?proto.proto.ContractGetBytecodeQuery|undefined} value
- * @return {!proto.proto.Query} returns this
-*/
-proto.proto.Query.prototype.setContractgetbytecode = function(value) {
-  return jspb.Message.setOneofWrapperField(this, 5, proto.proto.Query.oneofGroups_[0], value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.proto.Query} returns this
- */
-proto.proto.Query.prototype.clearContractgetbytecode = function() {
-  return this.setContractgetbytecode(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.proto.Query.prototype.hasContractgetbytecode = function() {
-  return jspb.Message.getField(this, 5) != null;
-};
-
-
-/**
- * optional ContractGetRecordsQuery ContractGetRecords = 6;
- * @return {?proto.proto.ContractGetRecordsQuery}
- */
-proto.proto.Query.prototype.getContractgetrecords = function() {
-  return /** @type{?proto.proto.ContractGetRecordsQuery} */ (
-    jspb.Message.getWrapperField(this, ContractGetRecords_pb.ContractGetRecordsQuery, 6));
-};
-
-
-/**
- * @param {?proto.proto.ContractGetRecordsQuery|undefined} value
- * @return {!proto.proto.Query} returns this
-*/
-proto.proto.Query.prototype.setContractgetrecords = function(value) {
-  return jspb.Message.setOneofWrapperField(this, 6, proto.proto.Query.oneofGroups_[0], value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.proto.Query} returns this
- */
-proto.proto.Query.prototype.clearContractgetrecords = function() {
-  return this.setContractgetrecords(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.proto.Query.prototype.hasContractgetrecords = function() {
-  return jspb.Message.getField(this, 6) != null;
 };
 
 
@@ -873,80 +606,6 @@ proto.proto.Query.prototype.hasCryptogetproxystakers = function() {
 
 
 /**
- * optional FileGetContentsQuery fileGetContents = 12;
- * @return {?proto.proto.FileGetContentsQuery}
- */
-proto.proto.Query.prototype.getFilegetcontents = function() {
-  return /** @type{?proto.proto.FileGetContentsQuery} */ (
-    jspb.Message.getWrapperField(this, FileGetContents_pb.FileGetContentsQuery, 12));
-};
-
-
-/**
- * @param {?proto.proto.FileGetContentsQuery|undefined} value
- * @return {!proto.proto.Query} returns this
-*/
-proto.proto.Query.prototype.setFilegetcontents = function(value) {
-  return jspb.Message.setOneofWrapperField(this, 12, proto.proto.Query.oneofGroups_[0], value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.proto.Query} returns this
- */
-proto.proto.Query.prototype.clearFilegetcontents = function() {
-  return this.setFilegetcontents(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.proto.Query.prototype.hasFilegetcontents = function() {
-  return jspb.Message.getField(this, 12) != null;
-};
-
-
-/**
- * optional FileGetInfoQuery fileGetInfo = 13;
- * @return {?proto.proto.FileGetInfoQuery}
- */
-proto.proto.Query.prototype.getFilegetinfo = function() {
-  return /** @type{?proto.proto.FileGetInfoQuery} */ (
-    jspb.Message.getWrapperField(this, FileGetInfo_pb.FileGetInfoQuery, 13));
-};
-
-
-/**
- * @param {?proto.proto.FileGetInfoQuery|undefined} value
- * @return {!proto.proto.Query} returns this
-*/
-proto.proto.Query.prototype.setFilegetinfo = function(value) {
-  return jspb.Message.setOneofWrapperField(this, 13, proto.proto.Query.oneofGroups_[0], value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.proto.Query} returns this
- */
-proto.proto.Query.prototype.clearFilegetinfo = function() {
-  return this.setFilegetinfo(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.proto.Query.prototype.hasFilegetinfo = function() {
-  return jspb.Message.getField(this, 13) != null;
-};
-
-
-/**
  * optional TransactionGetReceiptQuery transactionGetReceipt = 14;
  * @return {?proto.proto.TransactionGetReceiptQuery}
  */
@@ -1054,43 +713,6 @@ proto.proto.Query.prototype.clearTransactiongetfastrecord = function() {
  */
 proto.proto.Query.prototype.hasTransactiongetfastrecord = function() {
   return jspb.Message.getField(this, 16) != null;
-};
-
-
-/**
- * optional ConsensusGetTopicInfoQuery consensusGetTopicInfo = 50;
- * @return {?proto.proto.ConsensusGetTopicInfoQuery}
- */
-proto.proto.Query.prototype.getConsensusgettopicinfo = function() {
-  return /** @type{?proto.proto.ConsensusGetTopicInfoQuery} */ (
-    jspb.Message.getWrapperField(this, ConsensusGetTopicInfo_pb.ConsensusGetTopicInfoQuery, 50));
-};
-
-
-/**
- * @param {?proto.proto.ConsensusGetTopicInfoQuery|undefined} value
- * @return {!proto.proto.Query} returns this
-*/
-proto.proto.Query.prototype.setConsensusgettopicinfo = function(value) {
-  return jspb.Message.setOneofWrapperField(this, 50, proto.proto.Query.oneofGroups_[0], value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.proto.Query} returns this
- */
-proto.proto.Query.prototype.clearConsensusgettopicinfo = function() {
-  return this.setConsensusgettopicinfo(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.proto.Query.prototype.hasConsensusgettopicinfo = function() {
-  return jspb.Message.getField(this, 50) != null;
 };
 
 

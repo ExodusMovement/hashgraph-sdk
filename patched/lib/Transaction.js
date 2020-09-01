@@ -184,11 +184,6 @@ exports.Transaction = Transaction;
 /* eslint-disable-next-line max-len */
 function methodFromTxn(inner) {
     switch (inner.getDataCase()) {
-        case TransactionBody_pb_1.TransactionBody.DataCase.CONTRACTCALL:
-        case TransactionBody_pb_1.TransactionBody.DataCase.CONTRACTCREATEINSTANCE:
-        case TransactionBody_pb_1.TransactionBody.DataCase.CONTRACTUPDATEINSTANCE:
-        case TransactionBody_pb_1.TransactionBody.DataCase.CONTRACTDELETEINSTANCE:
-            throw new Error('This method was removed by code cleanup');
         case TransactionBody_pb_1.TransactionBody.DataCase.CRYPTOCREATEACCOUNT:
             return CryptoService_pb_service_1.CryptoService.createAccount;
         case TransactionBody_pb_1.TransactionBody.DataCase.CRYPTODELETE:
@@ -197,13 +192,6 @@ function methodFromTxn(inner) {
             return CryptoService_pb_service_1.CryptoService.cryptoTransfer;
         case TransactionBody_pb_1.TransactionBody.DataCase.CRYPTOUPDATEACCOUNT:
             return CryptoService_pb_service_1.CryptoService.updateAccount;
-        case TransactionBody_pb_1.TransactionBody.DataCase.FILEAPPEND:
-        case TransactionBody_pb_1.TransactionBody.DataCase.FILECREATE:
-        case TransactionBody_pb_1.TransactionBody.DataCase.FILEDELETE:
-        case TransactionBody_pb_1.TransactionBody.DataCase.FILEUPDATE:
-        case TransactionBody_pb_1.TransactionBody.DataCase.SYSTEMDELETE:
-        case TransactionBody_pb_1.TransactionBody.DataCase.SYSTEMUNDELETE:
-            throw new Error('This method was removed by code cleanup');
         case TransactionBody_pb_1.TransactionBody.DataCase.DATA_NOT_SET:
             throw new Error("transaction body missing");
         default:

@@ -102,9 +102,6 @@ exports.Client = Client;
 for (const cls of [
     exports_1.TransactionReceipt,
     exports_1.AccountId,
-    exports_1.FileId,
-    exports_1.ConsensusTopicId,
-    exports_1.ContractId,
     exports_1.TransactionId,
     exports_1.Ed25519PrivateKey,
     exports_1.Ed25519PublicKey,

@@ -46,18 +46,9 @@ var HbarUnit_1 = require("./HbarUnit");
 Object.defineProperty(exports, "HbarUnit", { enumerable: true, get: function () { return HbarUnit_1.HbarUnit; } });
 var AccountId_1 = require("./account/AccountId");
 Object.defineProperty(exports, "AccountId", { enumerable: true, get: function () { return AccountId_1.AccountId; } });
-var ContractId_1 = require("./contract/ContractId");
-Object.defineProperty(exports, "ContractId", { enumerable: true, get: function () { return ContractId_1.ContractId; } });
-var FileId_1 = require("./file/FileId");
-Object.defineProperty(exports, "FileId", { enumerable: true, get: function () { return FileId_1.FileId; } });
 var TransactionId_1 = require("./TransactionId");
 Object.defineProperty(exports, "TransactionId", { enumerable: true, get: function () { return TransactionId_1.TransactionId; } });
 var TransactionReceipt_1 = require("./TransactionReceipt");
 Object.defineProperty(exports, "TransactionReceipt", { enumerable: true, get: function () { return TransactionReceipt_1.TransactionReceipt; } });
-var ContractFunctionParams_1 = require("./contract/ContractFunctionParams");
-Object.defineProperty(exports, "ContractFunctionParams", { enumerable: true, get: function () { return ContractFunctionParams_1.ContractFunctionParams; } });
 var Time_1 = require("./Time");
 Object.defineProperty(exports, "Time", { enumerable: true, get: function () { return Time_1.Time; } });
-// Consensus
-var ConsensusTopicId_1 = require("./consensus/ConsensusTopicId");
-Object.defineProperty(exports, "ConsensusTopicId", { enumerable: true, get: function () { return ConsensusTopicId_1.ConsensusTopicId; } });

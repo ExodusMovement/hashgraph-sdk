@@ -12,8 +12,6 @@ var jspb = require('../google-protobuf.patched/google-protobuf');
 var goog = jspb;
 const { proto } = jspb.globalScope
 
-var Duration_pb = require('./Duration_pb.js');
-goog.object.extend(proto, Duration_pb);
 var BasicTypes_pb = require('./BasicTypes_pb.js');
 goog.object.extend(proto, BasicTypes_pb);
 var TransactionBody_pb = require('./TransactionBody_pb.js');

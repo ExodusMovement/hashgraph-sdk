@@ -16,14 +16,6 @@ var GetByKey_pb = require('./GetByKey_pb.js');
 goog.object.extend(proto, GetByKey_pb);
 var GetBySolidityID_pb = require('./GetBySolidityID_pb.js');
 goog.object.extend(proto, GetBySolidityID_pb);
-var ContractCallLocal_pb = require('./ContractCallLocal_pb.js');
-goog.object.extend(proto, ContractCallLocal_pb);
-var ContractGetBytecode_pb = require('./ContractGetBytecode_pb.js');
-goog.object.extend(proto, ContractGetBytecode_pb);
-var ContractGetInfo_pb = require('./ContractGetInfo_pb.js');
-goog.object.extend(proto, ContractGetInfo_pb);
-var ContractGetRecords_pb = require('./ContractGetRecords_pb.js');
-goog.object.extend(proto, ContractGetRecords_pb);
 var CryptoGetAccountBalance_pb = require('./CryptoGetAccountBalance_pb.js');
 goog.object.extend(proto, CryptoGetAccountBalance_pb);
 var CryptoGetAccountRecords_pb = require('./CryptoGetAccountRecords_pb.js');
@@ -34,18 +26,12 @@ var CryptoGetLiveHash_pb = require('./CryptoGetLiveHash_pb.js');
 goog.object.extend(proto, CryptoGetLiveHash_pb);
 var CryptoGetStakers_pb = require('./CryptoGetStakers_pb.js');
 goog.object.extend(proto, CryptoGetStakers_pb);
-var FileGetContents_pb = require('./FileGetContents_pb.js');
-goog.object.extend(proto, FileGetContents_pb);
-var FileGetInfo_pb = require('./FileGetInfo_pb.js');
-goog.object.extend(proto, FileGetInfo_pb);
 var TransactionGetReceipt_pb = require('./TransactionGetReceipt_pb.js');
 goog.object.extend(proto, TransactionGetReceipt_pb);
 var TransactionGetRecord_pb = require('./TransactionGetRecord_pb.js');
 goog.object.extend(proto, TransactionGetRecord_pb);
 var TransactionGetFastRecord_pb = require('./TransactionGetFastRecord_pb.js');
 goog.object.extend(proto, TransactionGetFastRecord_pb);
-var ConsensusGetTopicInfo_pb = require('./ConsensusGetTopicInfo_pb.js');
-goog.object.extend(proto, ConsensusGetTopicInfo_pb);
 var NetworkGetVersionInfo_pb = require('./NetworkGetVersionInfo_pb.js');
 goog.object.extend(proto, NetworkGetVersionInfo_pb);
 goog.exportSymbol('proto.proto.Response', null, global);
@@ -80,7 +66,7 @@ if (goog.DEBUG && !COMPILED) {
  * @private {!Array<!Array<number>>}
  * @const
  */
-proto.proto.Response.oneofGroups_ = [[1,2,3,5,4,6,7,8,9,10,11,12,13,14,15,16,150,151]];
+proto.proto.Response.oneofGroups_ = [[1,2,7,8,9,10,11,14,15,16,151]];
 
 /**
  * @enum {number}
@@ -89,21 +75,14 @@ proto.proto.Response.ResponseCase = {
   RESPONSE_NOT_SET: 0,
   GETBYKEY: 1,
   GETBYSOLIDITYID: 2,
-  CONTRACTCALLLOCAL: 3,
-  CONTRACTGETBYTECODERESPONSE: 5,
-  CONTRACTGETINFO: 4,
-  CONTRACTGETRECORDSRESPONSE: 6,
   CRYPTOGETACCOUNTBALANCE: 7,
   CRYPTOGETACCOUNTRECORDS: 8,
   CRYPTOGETINFO: 9,
   CRYPTOGETLIVEHASH: 10,
   CRYPTOGETPROXYSTAKERS: 11,
-  FILEGETCONTENTS: 12,
-  FILEGETINFO: 13,
   TRANSACTIONGETRECEIPT: 14,
   TRANSACTIONGETRECORD: 15,
   TRANSACTIONGETFASTRECORD: 16,
-  CONSENSUSGETTOPICINFO: 150,
   NETWORKGETVERSIONINFO: 151
 };
 
@@ -147,21 +126,14 @@ proto.proto.Response.toObject = function(includeInstance, msg) {
   var f, obj = {
     getbykey: (f = msg.getGetbykey()) && GetByKey_pb.GetByKeyResponse.toObject(includeInstance, f),
     getbysolidityid: (f = msg.getGetbysolidityid()) && GetBySolidityID_pb.GetBySolidityIDResponse.toObject(includeInstance, f),
-    contractcalllocal: (f = msg.getContractcalllocal()) && ContractCallLocal_pb.ContractCallLocalResponse.toObject(includeInstance, f),
-    contractgetbytecoderesponse: (f = msg.getContractgetbytecoderesponse()) && ContractGetBytecode_pb.ContractGetBytecodeResponse.toObject(includeInstance, f),
-    contractgetinfo: (f = msg.getContractgetinfo()) && ContractGetInfo_pb.ContractGetInfoResponse.toObject(includeInstance, f),
-    contractgetrecordsresponse: (f = msg.getContractgetrecordsresponse()) && ContractGetRecords_pb.ContractGetRecordsResponse.toObject(includeInstance, f),
     cryptogetaccountbalance: (f = msg.getCryptogetaccountbalance()) && CryptoGetAccountBalance_pb.CryptoGetAccountBalanceResponse.toObject(includeInstance, f),
     cryptogetaccountrecords: (f = msg.getCryptogetaccountrecords()) && CryptoGetAccountRecords_pb.CryptoGetAccountRecordsResponse.toObject(includeInstance, f),
     cryptogetinfo: (f = msg.getCryptogetinfo()) && CryptoGetInfo_pb.CryptoGetInfoResponse.toObject(includeInstance, f),
     cryptogetlivehash: (f = msg.getCryptogetlivehash()) && CryptoGetLiveHash_pb.CryptoGetLiveHashResponse.toObject(includeInstance, f),
     cryptogetproxystakers: (f = msg.getCryptogetproxystakers()) && CryptoGetStakers_pb.CryptoGetStakersResponse.toObject(includeInstance, f),
-    filegetcontents: (f = msg.getFilegetcontents()) && FileGetContents_pb.FileGetContentsResponse.toObject(includeInstance, f),
-    filegetinfo: (f = msg.getFilegetinfo()) && FileGetInfo_pb.FileGetInfoResponse.toObject(includeInstance, f),
     transactiongetreceipt: (f = msg.getTransactiongetreceipt()) && TransactionGetReceipt_pb.TransactionGetReceiptResponse.toObject(includeInstance, f),
     transactiongetrecord: (f = msg.getTransactiongetrecord()) && TransactionGetRecord_pb.TransactionGetRecordResponse.toObject(includeInstance, f),
     transactiongetfastrecord: (f = msg.getTransactiongetfastrecord()) && TransactionGetFastRecord_pb.TransactionGetFastRecordResponse.toObject(includeInstance, f),
-    consensusgettopicinfo: (f = msg.getConsensusgettopicinfo()) && ConsensusGetTopicInfo_pb.ConsensusGetTopicInfoResponse.toObject(includeInstance, f),
     networkgetversioninfo: (f = msg.getNetworkgetversioninfo()) && NetworkGetVersionInfo_pb.NetworkGetVersionInfoResponse.toObject(includeInstance, f)
   };
 
@@ -209,26 +181,6 @@ proto.proto.Response.deserializeBinaryFromReader = function(msg, reader) {
       reader.readMessage(value,GetBySolidityID_pb.GetBySolidityIDResponse.deserializeBinaryFromReader);
       msg.setGetbysolidityid(value);
       break;
-    case 3:
-      var value = new ContractCallLocal_pb.ContractCallLocalResponse;
-      reader.readMessage(value,ContractCallLocal_pb.ContractCallLocalResponse.deserializeBinaryFromReader);
-      msg.setContractcalllocal(value);
-      break;
-    case 5:
-      var value = new ContractGetBytecode_pb.ContractGetBytecodeResponse;
-      reader.readMessage(value,ContractGetBytecode_pb.ContractGetBytecodeResponse.deserializeBinaryFromReader);
-      msg.setContractgetbytecoderesponse(value);
-      break;
-    case 4:
-      var value = new ContractGetInfo_pb.ContractGetInfoResponse;
-      reader.readMessage(value,ContractGetInfo_pb.ContractGetInfoResponse.deserializeBinaryFromReader);
-      msg.setContractgetinfo(value);
-      break;
-    case 6:
-      var value = new ContractGetRecords_pb.ContractGetRecordsResponse;
-      reader.readMessage(value,ContractGetRecords_pb.ContractGetRecordsResponse.deserializeBinaryFromReader);
-      msg.setContractgetrecordsresponse(value);
-      break;
     case 7:
       var value = new CryptoGetAccountBalance_pb.CryptoGetAccountBalanceResponse;
       reader.readMessage(value,CryptoGetAccountBalance_pb.CryptoGetAccountBalanceResponse.deserializeBinaryFromReader);
@@ -254,16 +206,6 @@ proto.proto.Response.deserializeBinaryFromReader = function(msg, reader) {
       reader.readMessage(value,CryptoGetStakers_pb.CryptoGetStakersResponse.deserializeBinaryFromReader);
       msg.setCryptogetproxystakers(value);
       break;
-    case 12:
-      var value = new FileGetContents_pb.FileGetContentsResponse;
-      reader.readMessage(value,FileGetContents_pb.FileGetContentsResponse.deserializeBinaryFromReader);
-      msg.setFilegetcontents(value);
-      break;
-    case 13:
-      var value = new FileGetInfo_pb.FileGetInfoResponse;
-      reader.readMessage(value,FileGetInfo_pb.FileGetInfoResponse.deserializeBinaryFromReader);
-      msg.setFilegetinfo(value);
-      break;
     case 14:
       var value = new TransactionGetReceipt_pb.TransactionGetReceiptResponse;
       reader.readMessage(value,TransactionGetReceipt_pb.TransactionGetReceiptResponse.deserializeBinaryFromReader);
@@ -278,11 +220,6 @@ proto.proto.Response.deserializeBinaryFromReader = function(msg, reader) {
       var value = new TransactionGetFastRecord_pb.TransactionGetFastRecordResponse;
       reader.readMessage(value,TransactionGetFastRecord_pb.TransactionGetFastRecordResponse.deserializeBinaryFromReader);
       msg.setTransactiongetfastrecord(value);
-      break;
-    case 150:
-      var value = new ConsensusGetTopicInfo_pb.ConsensusGetTopicInfoResponse;
-      reader.readMessage(value,ConsensusGetTopicInfo_pb.ConsensusGetTopicInfoResponse.deserializeBinaryFromReader);
-      msg.setConsensusgettopicinfo(value);
       break;
     case 151:
       var value = new NetworkGetVersionInfo_pb.NetworkGetVersionInfoResponse;
@@ -334,38 +271,6 @@ proto.proto.Response.serializeBinaryToWriter = function(message, writer) {
       GetBySolidityID_pb.GetBySolidityIDResponse.serializeBinaryToWriter
     );
   }
-  f = message.getContractcalllocal();
-  if (f != null) {
-    writer.writeMessage(
-      3,
-      f,
-      ContractCallLocal_pb.ContractCallLocalResponse.serializeBinaryToWriter
-    );
-  }
-  f = message.getContractgetbytecoderesponse();
-  if (f != null) {
-    writer.writeMessage(
-      5,
-      f,
-      ContractGetBytecode_pb.ContractGetBytecodeResponse.serializeBinaryToWriter
-    );
-  }
-  f = message.getContractgetinfo();
-  if (f != null) {
-    writer.writeMessage(
-      4,
-      f,
-      ContractGetInfo_pb.ContractGetInfoResponse.serializeBinaryToWriter
-    );
-  }
-  f = message.getContractgetrecordsresponse();
-  if (f != null) {
-    writer.writeMessage(
-      6,
-      f,
-      ContractGetRecords_pb.ContractGetRecordsResponse.serializeBinaryToWriter
-    );
-  }
   f = message.getCryptogetaccountbalance();
   if (f != null) {
     writer.writeMessage(
@@ -406,22 +311,6 @@ proto.proto.Response.serializeBinaryToWriter = function(message, writer) {
       CryptoGetStakers_pb.CryptoGetStakersResponse.serializeBinaryToWriter
     );
   }
-  f = message.getFilegetcontents();
-  if (f != null) {
-    writer.writeMessage(
-      12,
-      f,
-      FileGetContents_pb.FileGetContentsResponse.serializeBinaryToWriter
-    );
-  }
-  f = message.getFilegetinfo();
-  if (f != null) {
-    writer.writeMessage(
-      13,
-      f,
-      FileGetInfo_pb.FileGetInfoResponse.serializeBinaryToWriter
-    );
-  }
   f = message.getTransactiongetreceipt();
   if (f != null) {
     writer.writeMessage(
@@ -444,14 +333,6 @@ proto.proto.Response.serializeBinaryToWriter = function(message, writer) {
       16,
       f,
       TransactionGetFastRecord_pb.TransactionGetFastRecordResponse.serializeBinaryToWriter
-    );
-  }
-  f = message.getConsensusgettopicinfo();
-  if (f != null) {
-    writer.writeMessage(
-      150,
-      f,
-      ConsensusGetTopicInfo_pb.ConsensusGetTopicInfoResponse.serializeBinaryToWriter
     );
   }
   f = message.getNetworkgetversioninfo();
@@ -536,154 +417,6 @@ proto.proto.Response.prototype.clearGetbysolidityid = function() {
  */
 proto.proto.Response.prototype.hasGetbysolidityid = function() {
   return jspb.Message.getField(this, 2) != null;
-};
-
-
-/**
- * optional ContractCallLocalResponse contractCallLocal = 3;
- * @return {?proto.proto.ContractCallLocalResponse}
- */
-proto.proto.Response.prototype.getContractcalllocal = function() {
-  return /** @type{?proto.proto.ContractCallLocalResponse} */ (
-    jspb.Message.getWrapperField(this, ContractCallLocal_pb.ContractCallLocalResponse, 3));
-};
-
-
-/**
- * @param {?proto.proto.ContractCallLocalResponse|undefined} value
- * @return {!proto.proto.Response} returns this
-*/
-proto.proto.Response.prototype.setContractcalllocal = function(value) {
-  return jspb.Message.setOneofWrapperField(this, 3, proto.proto.Response.oneofGroups_[0], value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.proto.Response} returns this
- */
-proto.proto.Response.prototype.clearContractcalllocal = function() {
-  return this.setContractcalllocal(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.proto.Response.prototype.hasContractcalllocal = function() {
-  return jspb.Message.getField(this, 3) != null;
-};
-
-
-/**
- * optional ContractGetBytecodeResponse contractGetBytecodeResponse = 5;
- * @return {?proto.proto.ContractGetBytecodeResponse}
- */
-proto.proto.Response.prototype.getContractgetbytecoderesponse = function() {
-  return /** @type{?proto.proto.ContractGetBytecodeResponse} */ (
-    jspb.Message.getWrapperField(this, ContractGetBytecode_pb.ContractGetBytecodeResponse, 5));
-};
-
-
-/**
- * @param {?proto.proto.ContractGetBytecodeResponse|undefined} value
- * @return {!proto.proto.Response} returns this
-*/
-proto.proto.Response.prototype.setContractgetbytecoderesponse = function(value) {
-  return jspb.Message.setOneofWrapperField(this, 5, proto.proto.Response.oneofGroups_[0], value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.proto.Response} returns this
- */
-proto.proto.Response.prototype.clearContractgetbytecoderesponse = function() {
-  return this.setContractgetbytecoderesponse(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.proto.Response.prototype.hasContractgetbytecoderesponse = function() {
-  return jspb.Message.getField(this, 5) != null;
-};
-
-
-/**
- * optional ContractGetInfoResponse contractGetInfo = 4;
- * @return {?proto.proto.ContractGetInfoResponse}
- */
-proto.proto.Response.prototype.getContractgetinfo = function() {
-  return /** @type{?proto.proto.ContractGetInfoResponse} */ (
-    jspb.Message.getWrapperField(this, ContractGetInfo_pb.ContractGetInfoResponse, 4));
-};
-
-
-/**
- * @param {?proto.proto.ContractGetInfoResponse|undefined} value
- * @return {!proto.proto.Response} returns this
-*/
-proto.proto.Response.prototype.setContractgetinfo = function(value) {
-  return jspb.Message.setOneofWrapperField(this, 4, proto.proto.Response.oneofGroups_[0], value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.proto.Response} returns this
- */
-proto.proto.Response.prototype.clearContractgetinfo = function() {
-  return this.setContractgetinfo(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.proto.Response.prototype.hasContractgetinfo = function() {
-  return jspb.Message.getField(this, 4) != null;
-};
-
-
-/**
- * optional ContractGetRecordsResponse contractGetRecordsResponse = 6;
- * @return {?proto.proto.ContractGetRecordsResponse}
- */
-proto.proto.Response.prototype.getContractgetrecordsresponse = function() {
-  return /** @type{?proto.proto.ContractGetRecordsResponse} */ (
-    jspb.Message.getWrapperField(this, ContractGetRecords_pb.ContractGetRecordsResponse, 6));
-};
-
-
-/**
- * @param {?proto.proto.ContractGetRecordsResponse|undefined} value
- * @return {!proto.proto.Response} returns this
-*/
-proto.proto.Response.prototype.setContractgetrecordsresponse = function(value) {
-  return jspb.Message.setOneofWrapperField(this, 6, proto.proto.Response.oneofGroups_[0], value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.proto.Response} returns this
- */
-proto.proto.Response.prototype.clearContractgetrecordsresponse = function() {
-  return this.setContractgetrecordsresponse(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.proto.Response.prototype.hasContractgetrecordsresponse = function() {
-  return jspb.Message.getField(this, 6) != null;
 };
 
 
@@ -873,80 +606,6 @@ proto.proto.Response.prototype.hasCryptogetproxystakers = function() {
 
 
 /**
- * optional FileGetContentsResponse fileGetContents = 12;
- * @return {?proto.proto.FileGetContentsResponse}
- */
-proto.proto.Response.prototype.getFilegetcontents = function() {
-  return /** @type{?proto.proto.FileGetContentsResponse} */ (
-    jspb.Message.getWrapperField(this, FileGetContents_pb.FileGetContentsResponse, 12));
-};
-
-
-/**
- * @param {?proto.proto.FileGetContentsResponse|undefined} value
- * @return {!proto.proto.Response} returns this
-*/
-proto.proto.Response.prototype.setFilegetcontents = function(value) {
-  return jspb.Message.setOneofWrapperField(this, 12, proto.proto.Response.oneofGroups_[0], value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.proto.Response} returns this
- */
-proto.proto.Response.prototype.clearFilegetcontents = function() {
-  return this.setFilegetcontents(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.proto.Response.prototype.hasFilegetcontents = function() {
-  return jspb.Message.getField(this, 12) != null;
-};
-
-
-/**
- * optional FileGetInfoResponse fileGetInfo = 13;
- * @return {?proto.proto.FileGetInfoResponse}
- */
-proto.proto.Response.prototype.getFilegetinfo = function() {
-  return /** @type{?proto.proto.FileGetInfoResponse} */ (
-    jspb.Message.getWrapperField(this, FileGetInfo_pb.FileGetInfoResponse, 13));
-};
-
-
-/**
- * @param {?proto.proto.FileGetInfoResponse|undefined} value
- * @return {!proto.proto.Response} returns this
-*/
-proto.proto.Response.prototype.setFilegetinfo = function(value) {
-  return jspb.Message.setOneofWrapperField(this, 13, proto.proto.Response.oneofGroups_[0], value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.proto.Response} returns this
- */
-proto.proto.Response.prototype.clearFilegetinfo = function() {
-  return this.setFilegetinfo(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.proto.Response.prototype.hasFilegetinfo = function() {
-  return jspb.Message.getField(this, 13) != null;
-};
-
-
-/**
  * optional TransactionGetReceiptResponse transactionGetReceipt = 14;
  * @return {?proto.proto.TransactionGetReceiptResponse}
  */
@@ -1054,43 +713,6 @@ proto.proto.Response.prototype.clearTransactiongetfastrecord = function() {
  */
 proto.proto.Response.prototype.hasTransactiongetfastrecord = function() {
   return jspb.Message.getField(this, 16) != null;
-};
-
-
-/**
- * optional ConsensusGetTopicInfoResponse consensusGetTopicInfo = 150;
- * @return {?proto.proto.ConsensusGetTopicInfoResponse}
- */
-proto.proto.Response.prototype.getConsensusgettopicinfo = function() {
-  return /** @type{?proto.proto.ConsensusGetTopicInfoResponse} */ (
-    jspb.Message.getWrapperField(this, ConsensusGetTopicInfo_pb.ConsensusGetTopicInfoResponse, 150));
-};
-
-
-/**
- * @param {?proto.proto.ConsensusGetTopicInfoResponse|undefined} value
- * @return {!proto.proto.Response} returns this
-*/
-proto.proto.Response.prototype.setConsensusgettopicinfo = function(value) {
-  return jspb.Message.setOneofWrapperField(this, 150, proto.proto.Response.oneofGroups_[0], value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.proto.Response} returns this
- */
-proto.proto.Response.prototype.clearConsensusgettopicinfo = function() {
-  return this.setConsensusgettopicinfo(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.proto.Response.prototype.hasConsensusgettopicinfo = function() {
-  return jspb.Message.getField(this, 150) != null;
 };
 
 

@@ -4,7 +4,6 @@
 import * as jspb from "google-protobuf";
 import * as BasicTypes_pb from "./BasicTypes_pb";
 import * as Duration_pb from "./Duration_pb";
-import * as Timestamp_pb from "./Timestamp_pb";
 
 export class ConsensusCreateTopicTransactionBody extends jspb.Message {
   getMemo(): string;

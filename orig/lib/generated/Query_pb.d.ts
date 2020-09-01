@@ -4,21 +4,14 @@
 import * as jspb from "google-protobuf";
 import * as GetByKey_pb from "./GetByKey_pb";
 import * as GetBySolidityID_pb from "./GetBySolidityID_pb";
-import * as ContractCallLocal_pb from "./ContractCallLocal_pb";
-import * as ContractGetInfo_pb from "./ContractGetInfo_pb";
-import * as ContractGetBytecode_pb from "./ContractGetBytecode_pb";
-import * as ContractGetRecords_pb from "./ContractGetRecords_pb";
 import * as CryptoGetAccountBalance_pb from "./CryptoGetAccountBalance_pb";
 import * as CryptoGetAccountRecords_pb from "./CryptoGetAccountRecords_pb";
 import * as CryptoGetInfo_pb from "./CryptoGetInfo_pb";
 import * as CryptoGetLiveHash_pb from "./CryptoGetLiveHash_pb";
 import * as CryptoGetStakers_pb from "./CryptoGetStakers_pb";
-import * as FileGetContents_pb from "./FileGetContents_pb";
-import * as FileGetInfo_pb from "./FileGetInfo_pb";
 import * as TransactionGetReceipt_pb from "./TransactionGetReceipt_pb";
 import * as TransactionGetRecord_pb from "./TransactionGetRecord_pb";
 import * as TransactionGetFastRecord_pb from "./TransactionGetFastRecord_pb";
-import * as ConsensusGetTopicInfo_pb from "./ConsensusGetTopicInfo_pb";
 import * as NetworkGetVersionInfo_pb from "./NetworkGetVersionInfo_pb";
 
 export class Query extends jspb.Message {
@@ -31,26 +24,6 @@ export class Query extends jspb.Message {
   clearGetbysolidityid(): void;
   getGetbysolidityid(): GetBySolidityID_pb.GetBySolidityIDQuery | undefined;
   setGetbysolidityid(value?: GetBySolidityID_pb.GetBySolidityIDQuery): void;
-
-  hasContractcalllocal(): boolean;
-  clearContractcalllocal(): void;
-  getContractcalllocal(): ContractCallLocal_pb.ContractCallLocalQuery | undefined;
-  setContractcalllocal(value?: ContractCallLocal_pb.ContractCallLocalQuery): void;
-
-  hasContractgetinfo(): boolean;
-  clearContractgetinfo(): void;
-  getContractgetinfo(): ContractGetInfo_pb.ContractGetInfoQuery | undefined;
-  setContractgetinfo(value?: ContractGetInfo_pb.ContractGetInfoQuery): void;
-
-  hasContractgetbytecode(): boolean;
-  clearContractgetbytecode(): void;
-  getContractgetbytecode(): ContractGetBytecode_pb.ContractGetBytecodeQuery | undefined;
-  setContractgetbytecode(value?: ContractGetBytecode_pb.ContractGetBytecodeQuery): void;
-
-  hasContractgetrecords(): boolean;
-  clearContractgetrecords(): void;
-  getContractgetrecords(): ContractGetRecords_pb.ContractGetRecordsQuery | undefined;
-  setContractgetrecords(value?: ContractGetRecords_pb.ContractGetRecordsQuery): void;
 
   hasCryptogetaccountbalance(): boolean;
   clearCryptogetaccountbalance(): void;
@@ -77,16 +50,6 @@ export class Query extends jspb.Message {
   getCryptogetproxystakers(): CryptoGetStakers_pb.CryptoGetStakersQuery | undefined;
   setCryptogetproxystakers(value?: CryptoGetStakers_pb.CryptoGetStakersQuery): void;
 
-  hasFilegetcontents(): boolean;
-  clearFilegetcontents(): void;
-  getFilegetcontents(): FileGetContents_pb.FileGetContentsQuery | undefined;
-  setFilegetcontents(value?: FileGetContents_pb.FileGetContentsQuery): void;
-
-  hasFilegetinfo(): boolean;
-  clearFilegetinfo(): void;
-  getFilegetinfo(): FileGetInfo_pb.FileGetInfoQuery | undefined;
-  setFilegetinfo(value?: FileGetInfo_pb.FileGetInfoQuery): void;
-
   hasTransactiongetreceipt(): boolean;
   clearTransactiongetreceipt(): void;
   getTransactiongetreceipt(): TransactionGetReceipt_pb.TransactionGetReceiptQuery | undefined;
@@ -101,11 +64,6 @@ export class Query extends jspb.Message {
   clearTransactiongetfastrecord(): void;
   getTransactiongetfastrecord(): TransactionGetFastRecord_pb.TransactionGetFastRecordQuery | undefined;
   setTransactiongetfastrecord(value?: TransactionGetFastRecord_pb.TransactionGetFastRecordQuery): void;
-
-  hasConsensusgettopicinfo(): boolean;
-  clearConsensusgettopicinfo(): void;
-  getConsensusgettopicinfo(): ConsensusGetTopicInfo_pb.ConsensusGetTopicInfoQuery | undefined;
-  setConsensusgettopicinfo(value?: ConsensusGetTopicInfo_pb.ConsensusGetTopicInfoQuery): void;
 
   hasNetworkgetversioninfo(): boolean;
   clearNetworkgetversioninfo(): void;
@@ -127,21 +85,14 @@ export namespace Query {
   export type AsObject = {
     getbykey?: GetByKey_pb.GetByKeyQuery.AsObject,
     getbysolidityid?: GetBySolidityID_pb.GetBySolidityIDQuery.AsObject,
-    contractcalllocal?: ContractCallLocal_pb.ContractCallLocalQuery.AsObject,
-    contractgetinfo?: ContractGetInfo_pb.ContractGetInfoQuery.AsObject,
-    contractgetbytecode?: ContractGetBytecode_pb.ContractGetBytecodeQuery.AsObject,
-    contractgetrecords?: ContractGetRecords_pb.ContractGetRecordsQuery.AsObject,
     cryptogetaccountbalance?: CryptoGetAccountBalance_pb.CryptoGetAccountBalanceQuery.AsObject,
     cryptogetaccountrecords?: CryptoGetAccountRecords_pb.CryptoGetAccountRecordsQuery.AsObject,
     cryptogetinfo?: CryptoGetInfo_pb.CryptoGetInfoQuery.AsObject,
     cryptogetlivehash?: CryptoGetLiveHash_pb.CryptoGetLiveHashQuery.AsObject,
     cryptogetproxystakers?: CryptoGetStakers_pb.CryptoGetStakersQuery.AsObject,
-    filegetcontents?: FileGetContents_pb.FileGetContentsQuery.AsObject,
-    filegetinfo?: FileGetInfo_pb.FileGetInfoQuery.AsObject,
     transactiongetreceipt?: TransactionGetReceipt_pb.TransactionGetReceiptQuery.AsObject,
     transactiongetrecord?: TransactionGetRecord_pb.TransactionGetRecordQuery.AsObject,
     transactiongetfastrecord?: TransactionGetFastRecord_pb.TransactionGetFastRecordQuery.AsObject,
-    consensusgettopicinfo?: ConsensusGetTopicInfo_pb.ConsensusGetTopicInfoQuery.AsObject,
     networkgetversioninfo?: NetworkGetVersionInfo_pb.NetworkGetVersionInfoQuery.AsObject,
   }
 
@@ -149,21 +100,14 @@ export namespace Query {
     QUERY_NOT_SET = 0,
     GETBYKEY = 1,
     GETBYSOLIDITYID = 2,
-    CONTRACTCALLLOCAL = 3,
-    CONTRACTGETINFO = 4,
-    CONTRACTGETBYTECODE = 5,
-    CONTRACTGETRECORDS = 6,
     CRYPTOGETACCOUNTBALANCE = 7,
     CRYPTOGETACCOUNTRECORDS = 8,
     CRYPTOGETINFO = 9,
     CRYPTOGETLIVEHASH = 10,
     CRYPTOGETPROXYSTAKERS = 11,
-    FILEGETCONTENTS = 12,
-    FILEGETINFO = 13,
     TRANSACTIONGETRECEIPT = 14,
     TRANSACTIONGETRECORD = 15,
     TRANSACTIONGETFASTRECORD = 16,
-    CONSENSUSGETTOPICINFO = 50,
     NETWORKGETVERSIONINFO = 51,
   }
 }

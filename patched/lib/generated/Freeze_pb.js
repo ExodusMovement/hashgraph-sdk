@@ -12,10 +12,6 @@ var jspb = require('../google-protobuf.patched/google-protobuf');
 var goog = jspb;
 const { proto } = jspb.globalScope
 
-var Duration_pb = require('./Duration_pb.js');
-goog.object.extend(proto, Duration_pb);
-var Timestamp_pb = require('./Timestamp_pb.js');
-goog.object.extend(proto, Timestamp_pb);
 var BasicTypes_pb = require('./BasicTypes_pb.js');
 goog.object.extend(proto, BasicTypes_pb);
 goog.exportSymbol('proto.proto.FreezeTransactionBody', null, jspb.globalScope);

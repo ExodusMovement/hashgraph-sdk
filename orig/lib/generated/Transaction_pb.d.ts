@@ -2,7 +2,6 @@
 // file: Transaction.proto
 
 import * as jspb from "google-protobuf";
-import * as Duration_pb from "./Duration_pb";
 import * as BasicTypes_pb from "./BasicTypes_pb";
 import * as TransactionBody_pb from "./TransactionBody_pb";
 
