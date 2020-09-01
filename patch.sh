@@ -30,7 +30,7 @@ fi
 
 cp package.patched.json patched/package.json
 
-replace "@grpc/grpc-js" "@exodus/grpc-js" -- patched/lib/index-node.js patched/lib/mirror/node/*js > /dev/null
+replace "@grpc/grpc-js" "@exodus/grpc-js" -- patched/lib/index-node.js > /dev/null
 if grep -qrE '@grpc/grpc-js' patched; then
   echo "Error: @grpc/grpc-js still present"
   exit -1
