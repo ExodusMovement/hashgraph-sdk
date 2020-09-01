@@ -160,6 +160,11 @@ class Transaction {
             return this.id;
         });
     }
+    /** @deprecate `Transaction.getReceipt()` is deprecrated. Use `(await Transaction.execute()).getReceipt()` instead. */
+    getReceipt(client) {
+        console.warn("`Transaction.getReceipt()` is deprecrated. Use `(await Transaction.execute()).getReceipt()` instead.");
+        return this.id.getReceipt(client);
+    }
     _toProto() {
         return google_protobuf_1.Message.cloneMessage(this._inner);
     }

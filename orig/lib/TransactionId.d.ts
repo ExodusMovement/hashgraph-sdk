@@ -1,5 +1,7 @@
 import { AccountId, AccountIdLike } from "./account/AccountId";
 import { TransactionID } from "./generated/BasicTypes_pb";
+import { BaseClient } from "./BaseClient";
+import { TransactionReceipt } from "./TransactionReceipt";
 import { Time } from "./Time";
 /**
  * Normalized transaction ID returned by various methods in the SDK.
@@ -28,6 +30,7 @@ export declare class TransactionId {
     static withValidStart(id: AccountIdLike, validStart: Time): TransactionId;
     static fromString(id: string): TransactionId;
     toString(): string;
+    getReceipt(_: BaseClient): Promise<TransactionReceipt>;
     static _fromProto(id: TransactionID): TransactionId;
     _toProto(): TransactionID;
 }

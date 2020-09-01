@@ -69,6 +69,12 @@ class TransactionId {
     toString() {
         return `${this.accountId.toString()}@${this.validStart.seconds}.${this.validStart.nanos}`;
     }
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    getReceipt(_) {
+        return new Promise((_, reject) => {
+            reject(new Error("(BUG) `TransactionId.getReceipt()` declared, but not overwritten."));
+        });
+    }
     // NOT A STABLE API
     static _fromProto(id) {
         const seconds = util_1.orThrow(id.getTransactionvalidstart()).getSeconds();
