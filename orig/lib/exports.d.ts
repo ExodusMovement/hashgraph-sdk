@@ -1,8 +1,10 @@
 /** common exports go in this module */
 export { AccountCreateTransaction } from "./account/AccountCreateTransaction";
 export { AccountUpdateTransaction } from "./account/AccountUpdateTransaction";
+export { AccountDeleteTransaction } from "./account/AccountDeleteTransaction";
 export { AccountBalanceQuery } from "./account/AccountBalanceQuery";
 export { CryptoTransferTransaction } from "./account/CryptoTransferTransaction";
+export { TransactionReceiptQuery } from "./TransactionReceiptQuery";
 export { Transaction } from "./Transaction";
 export { Status } from "./Status";
 export { HederaStatusError } from "./errors/HederaStatusError";
@@ -11,6 +13,7 @@ export { BadKeyError } from "./errors/BadKeyError";
 export { HbarRangeError } from "./errors/HbarRangeError";
 export { MaxQueryPaymentExceededError } from "./errors/MaxQueryPaymentExceededError";
 export { HederaPrecheckStatusError } from "./errors/HederaPrecheckStatusError";
+export { HederaReceiptStatusError } from "./errors/HederaReceiptStatusError";
 export { Ed25519PrivateKey } from "./crypto/Ed25519PrivateKey";
 export { Ed25519PublicKey } from "./crypto/Ed25519PublicKey";
 export { PublicKey } from "./crypto/PublicKey";
