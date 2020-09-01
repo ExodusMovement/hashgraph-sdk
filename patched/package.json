@@ -30,6 +30,8 @@
     }
   ],
   "files": [
+    "lib/google-protobuf.patched/google-protobuf.js",
+    "lib/google-protobuf.patched/wrappers_pb.js",
     "lib/BaseClient.js",
     "lib/ExchangeRate.js",
     "lib/Hbar.js",
