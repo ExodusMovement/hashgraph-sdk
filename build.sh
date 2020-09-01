@@ -2,7 +2,7 @@
 
 cd hedera-sdk-js
 yarn --frozen-lockfile
-rm -rf lib
+rm -rf src/generated lib
 yarn run prepare
 cd ..
 
