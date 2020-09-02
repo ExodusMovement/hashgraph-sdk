@@ -8,11 +8,11 @@
  */
 // GENERATED CODE -- DO NOT EDIT!
 
-var jspb = require('../google-protobuf.patched/google-protobuf');
+var jspb = require('@exodus/google-protobuf');
 var goog = jspb;
-const { proto } = jspb.globalScope
+const proto = {};
 
-goog.exportSymbol('proto.proto.ResponseCodeEnum', null, jspb.globalScope);
+goog.exportSymbol('proto.proto.ResponseCodeEnum', null, { proto });
 /**
  * @enum {number}
  */

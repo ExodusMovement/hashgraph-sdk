@@ -4,7 +4,7 @@ exports.hbarFromTinybarOrHbar = exports.Hbar = exports.hbarCheck = exports.hbarT
 const bignumber_js_1 = require("bignumber.js");
 const HbarRangeError_1 = require("./errors/HbarRangeError");
 const HbarUnit_1 = require("./HbarUnit");
-const wrappers_pb_1 = require('./google-protobuf.patched/wrappers_pb');
+const wrappers_pb_1 = require("@exodus/google-protobuf/google/protobuf/wrappers_pb");
 const hbarTinybar = Symbol("hbarTinybar");
 exports.hbarToProto = Symbol("hbarToProto");
 exports.hbarToProtoValue = Symbol("hbarToProtoValue");

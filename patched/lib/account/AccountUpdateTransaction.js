@@ -8,7 +8,7 @@ const CryptoService_pb_service_1 = require("../generated/CryptoService_pb_servic
 const Hbar_1 = require("../Hbar");
 const AccountId_1 = require("./AccountId");
 const Timestamp_1 = require("../Timestamp");
-const wrappers_pb_1 = require('../google-protobuf.patched/wrappers_pb');
+const wrappers_pb_1 = require("@exodus/google-protobuf/google/protobuf/wrappers_pb");
 /**
  * Change properties for the given account. Any null field is ignored (left unchanged). This
  * transaction must be signed by the existing key for this account. If the transaction is

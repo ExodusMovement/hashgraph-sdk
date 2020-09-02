@@ -8,9 +8,9 @@
  */
 // GENERATED CODE -- DO NOT EDIT!
 
-var jspb = require('../google-protobuf.patched/google-protobuf');
+var jspb = require('@exodus/google-protobuf');
 var goog = jspb;
-const { proto } = jspb.globalScope
+const proto = {};
 
 var Query_pb = require('./Query_pb.js');
 goog.object.extend(proto, Query_pb);
